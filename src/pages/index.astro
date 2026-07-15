@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import headshot from '../assets/images/headshot.jpg';
-import n8nWorkflowMain from '../assets/images/n8n-workflow-main.png';
-import n8nWebhookRouter from '../assets/images/n8n-webhook-router.png';
-import n8nItemIteration from '../assets/images/n8n-item-iteration.png';
+
+// Import our new beautifully styled creative project screenshots
+import projectPremiumSign from '../assets/images/project-premium-sign.png';
+import projectFannit from '../assets/images/project-fannit.png';
+import projectGreening from '../assets/images/project-greening.png';
 
 // Global stylesheet import
 import '../styles/global.css';
@@ -15,14 +17,17 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jacques Damhuis | Tech-Enabled Content Manager & Systems Architect</title>
-		<!-- Google Fonts for custom tech feel -->
+		<title>Jacques Damhuis | Creative Content Developer, SEO Strategist & Copywriter</title>
+		<!-- Google Fonts for custom tech and warm creative feel -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 		<style>
 			body {
 				font-family: 'Plus Jakarta Sans', sans-serif;
+			}
+			.font-serif {
+				font-family: 'Playfair Display', serif;
 			}
 			.font-mono {
 				font-family: 'Fira Code', monospace;
@@ -52,11 +57,12 @@ import '../styles/global.css';
 
 				<!-- Desktop Nav Links -->
 				<nav class="hidden md:flex items-center gap-8 text-sm">
-					<a href="#hero" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Overview</a>
-					<a href="#blueprint" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Content Blueprint</a>
-					<a href="#workflow" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Automation Engine</a>
-					<a href="#experience" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Experience</a>
-					<a href="#contact" class="px-4 py-1.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:bg-zinc-800 hover:border-emerald-500/50 transition-all duration-200">Contact</a>
+					<a href="#hero" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Creative Hub</a>
+					<a href="#pipeline" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">The Blueprint</a>
+					<a href="#showcase" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Case Studies</a>
+					<a href="#about" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Origin Story</a>
+					<a href="#manifesto" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">My Manifesto</a>
+					<a href="#contact" class="px-4 py-1.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:bg-zinc-800 hover:border-emerald-500/50 transition-all duration-200">Let's Connect</a>
 				</nav>
 
 				<!-- Mobile menu button (simple CSS-based target toggle) -->
@@ -68,11 +74,12 @@ import '../styles/global.css';
 			</div>
 			<!-- Mobile Nav Menu -->
 			<div id="mobile-menu" class="hidden md:hidden border-b border-zinc-900 bg-zinc-950/95 backdrop-blur-md px-4 py-4 space-y-3">
-				<a href="#hero" class="block text-zinc-400 hover:text-white text-sm">Overview</a>
-				<a href="#blueprint" class="block text-zinc-400 hover:text-white text-sm">Content Blueprint</a>
-				<a href="#workflow" class="block text-zinc-400 hover:text-white text-sm">Automation Engine</a>
-				<a href="#experience" class="block text-zinc-400 hover:text-white text-sm">Experience</a>
-				<a href="#contact" class="block text-zinc-400 hover:text-white text-sm">Contact</a>
+				<a href="#hero" class="block text-zinc-400 hover:text-white text-sm">Creative Hub</a>
+				<a href="#pipeline" class="block text-zinc-400 hover:text-white text-sm">The Blueprint</a>
+				<a href="#showcase" class="block text-zinc-400 hover:text-white text-sm">Case Studies</a>
+				<a href="#about" class="block text-zinc-400 hover:text-white text-sm">Origin Story</a>
+				<a href="#manifesto" class="block text-zinc-400 hover:text-white text-sm">My Manifesto</a>
+				<a href="#contact" class="block text-zinc-400 hover:text-white text-sm">Let's Connect</a>
 			</div>
 		</header>
 
@@ -82,36 +89,40 @@ import '../styles/global.css';
 			<!-- Hero Section -->
 			<section id="hero" class="pt-8 md:pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 				<div class="lg:col-span-7 space-y-6">
-					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
 						<span class="flex h-2 w-2 relative">
 							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
 							<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
 						</span>
-						Available for Content Retainers
+						Human Craft, Accelerated Execution
 					</div>
 					<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-						Scaling Search Visibility via <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Tech-Enabled Content Management</span>
+						Scaling Big Ideas via <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Tech-Enabled Copywriting</span>
 					</h1>
-					<p class="text-zinc-400 text-lg sm:text-xl max-w-2xl font-light">
-						I build highly optimized search-visibility architectures. By combining elite content production and organic copywriting with modern automation speed-multipliers (Astro, WordPress, Semrush, Mailchimp, Whisper, Claude Code, and n8n), I turn content pipelines into high-velocity search-engine traffic machines.
+					<div class="border-l-2 border-emerald-500 pl-4 space-y-2 py-1">
+						<p class="font-serif italic text-lg sm:text-xl text-zinc-300">
+							"The Strategy is Deeply Human. The Execution is Accelerated."
+						</p>
+					</div>
+					<p class="text-zinc-400 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+						I craft high-impact B2B white papers, voice-adaptive SEO copy, and multi-channel content engines. I’m an idea person, copywriter, and content manager first. By blending classical creative strategy with modern AI and automation speed-multipliers, I eliminate the operational bottlenecks of content production without ever losing the human soul.
 					</p>
 
 					<!-- Stack Tech Badges -->
 					<div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-zinc-400">
-						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Astro & WordPress</span>
-						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Semrush & Ahrefs</span>
-						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Mailchimp Campaigns</span>
-						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Whisper & Claude Code</span>
-						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">n8n Automation</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">✍ Brand Storytelling</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">🔍 Semantic SEO & Search Intent</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">⚡ AI Ingest & Ideation Agents</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">🚀 Automated CMS Publishing</span>
 					</div>
 
 					<!-- Hero CTAs -->
 					<div class="flex flex-col sm:flex-row gap-4 pt-4">
-						<a href="#blueprint" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:translate-y-[-1px]">
-							Explore Content System
+						<a href="#showcase" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:translate-y-[-1px]">
+							See Creative Case Studies
 						</a>
-						<a href="#experience" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-sm font-semibold transition-all">
-							View Experience Timelines
+						<a href="#about" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-sm font-semibold transition-all">
+							My Origin Story
 						</a>
 					</div>
 				</div>
@@ -136,7 +147,7 @@ import '../styles/global.css';
 								<div class="relative w-16 h-16 rounded-xl bg-zinc-800 overflow-hidden border-2 border-emerald-500/40 flex-shrink-0">
 									<Image
 										src={headshot}
-										alt="Headshot Portrait"
+										alt="Jacques Damhuis"
 										class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
 										width={64}
 										height={64}
@@ -146,27 +157,27 @@ import '../styles/global.css';
 								</div>
 								<div>
 									<h3 class="font-bold text-white text-lg">Jacques Damhuis</h3>
-									<p class="text-sm font-mono text-zinc-500">Tech-Enabled Content Manager</p>
+									<p class="text-sm font-mono text-zinc-500">Creative Content & SEO Manager</p>
 								</div>
 							</div>
 
-							<!-- Tech Stats inside Card -->
+							<!-- Creative Stats inside Card -->
 							<div class="grid grid-cols-2 gap-4 bg-zinc-950/50 p-4 rounded-xl border border-zinc-800/80 font-mono text-xs">
 								<div>
-									<div class="text-zinc-500">Lighthouse Score</div>
-									<div class="text-emerald-400 font-bold text-sm">100 / 100</div>
+									<div class="text-zinc-500">Creative Focus</div>
+									<div class="text-emerald-400 font-bold text-sm">Ideas & Strategy</div>
 								</div>
 								<div>
-									<div class="text-zinc-500">Hosting</div>
-									<div class="text-indigo-400 font-bold text-sm">Cloudflare Edge</div>
+									<div class="text-zinc-500">Tone Adaptation</div>
+									<div class="text-indigo-400 font-bold text-sm">Fluid & Compliant</div>
 								</div>
 								<div>
-									<div class="text-zinc-500">Orchestrator</div>
-									<div class="text-emerald-400 font-bold text-sm">Astro / n8n / Git</div>
+									<div class="text-zinc-500">B2B Experience</div>
+									<div class="text-emerald-400 font-bold text-sm">White Papers / Blogs</div>
 								</div>
 								<div>
-									<div class="text-zinc-500">Batch Iteration</div>
-									<div class="text-indigo-400 font-bold text-sm">.item Loop Level</div>
+									<div class="text-zinc-500">Tech Multipliers</div>
+									<div class="text-indigo-400 font-bold text-sm">n8n / AI Agents</div>
 								</div>
 							</div>
 						</div>
@@ -175,20 +186,20 @@ import '../styles/global.css';
 			</section>
 
 			<!-- Interactive SVG System Architecture Diagram -->
-			<section id="blueprint" class="space-y-12">
+			<section id="pipeline" class="space-y-12">
 				<div class="text-center max-w-3xl mx-auto space-y-4">
 					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-						The Start-to-Publish Automated Content Blueprint
+						The Creative Ingestion & Publishing Pipeline
 					</h2>
 					<p class="text-zinc-400 font-light text-base sm:text-lg">
-						A fluid, high-velocity publishing ecosystem designed to eliminate operational friction and scale semantic content from draft to live instantly.
+						How I design, scale, and deliver elite content from raw concepts to live web-optimized assets instantly.
 					</p>
 				</div>
 
 				<!-- SVG Core Layout Container -->
 				<div class="p-6 md:p-8 bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl relative overflow-hidden group">
 					<div class="absolute top-0 left-0 px-4 py-2 bg-zinc-950 border-r border-b border-zinc-800 font-mono text-xs text-indigo-400 rounded-tl-xl rounded-br-xl">
-						CONTENT_PIPELINE_MAP.svg
+						CREATIVE_FLOW_MAP.svg
 					</div>
 
 					<div class="w-full pt-8 flex justify-center">
@@ -220,7 +231,7 @@ import '../styles/global.css';
 							</pattern>
 							<rect width="900" height="360" fill="url(#grid)" />
 
-							<!-- Flow lines with animation paths (simulated via dashed lines) -->
+							<!-- Flow lines with animation paths -->
 							<path d="M 190 140 H 290" stroke="url(#astro-to-cf)" stroke-width="2" stroke-dasharray="4 4" />
 							<path d="M 430 140 H 470" stroke="url(#cf-to-n8n)" stroke-width="2" stroke-dasharray="4 4" />
 							<path d="M 610 140 H 710" stroke="url(#n8n-to-db)" stroke-width="2" stroke-dasharray="4 4" />
@@ -228,87 +239,84 @@ import '../styles/global.css';
 
 							<!-- Interactive Hoverable Nodes -->
 
-							<!-- Node 1: Astro / WordPress / Git -->
+							<!-- Node 1: Front-End Layers -->
 							<g class="cursor-pointer group/node">
 								<rect x="30" y="80" width="160" height="120" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" />
 								<rect x="42" y="94" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
-								<!-- Code Icon in node -->
-								<path d="M 49 106 L 54 101 L 49 96" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M 59 106 L 54 101 L 59 96" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								<!-- Feather/Pen Icon -->
+								<path d="M 48 110 L 58 100 C 60 98 62 98 64 100 C 66 102 66 104 64 106 L 54 116 L 48 116 Z" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								<line x1="51" y1="113" x2="57" y2="107" stroke="#818cf8" stroke-width="1.5" />
 
-								<text x="78" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">Front-End Layers</text>
-								<text x="78" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Astro / WordPress</text>
+								<text x="78" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">1. Human Idea Hub</text>
+								<text x="78" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Concept & Strategy</text>
 
-								<text x="42" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Headless Astro SSG</text>
-								<text x="42" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● WordPress Gutenberg API</text>
-								<text x="42" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Structured Schema SEO</text>
+								<text x="42" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Deep Creative Ideation</text>
+								<text x="42" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Brand-Voice Customization</text>
+								<text x="42" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Narrative Angles & Hooks</text>
 							</g>
 
-							<!-- Node 2: Cloudflare Pages -->
+							<!-- Node 2: Web & CMS Layer -->
 							<g class="cursor-pointer group/node">
 								<rect x="290" y="80" width="140" height="120" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-emerald-400 group-hover/node:fill-zinc-900" />
 								<rect x="302" y="94" width="24" height="24" rx="6" fill="#34d399" fill-opacity="0.1" stroke="#34d399" stroke-width="1.5" />
-								<!-- Cloud Icon -->
-								<path d="M 314 99 C 316 99 317 100 318 101 C 319 100 321 99 322 100 C 324 100 325 102 324 104 L 324 107 C 324 108 323 109 322 109 H 308 C 307 109 306 108 306 107 C 306 104 308 102 310 102 C 311 100 312 99 314 99 Z" stroke="#34d399" stroke-width="1.2" fill="none" />
+								<!-- Web/Grid Icon -->
+								<rect x="308" y="100" width="12" height="12" rx="2" stroke="#34d399" stroke-width="1.2" fill="none" />
+								<line x1="314" y1="100" x2="314" y2="112" stroke="#34d399" stroke-width="1.2" />
+								<line x1="308" y1="106" x2="320" y2="106" stroke="#34d399" stroke-width="1.2" />
 
-								<text x="336" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">CF Pages</text>
-								<text x="336" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Global Edge</text>
+								<text x="336" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">2. CMS / Web</text>
+								<text x="336" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">WordPress / Astro</text>
 
-								<text x="302" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Smart CDN Caching</text>
-								<text x="302" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Sub-second responses</text>
-								<text x="302" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Max Security Guard</text>
+								<text x="302" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Headless API Publishing</text>
+								<text x="302" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Perfect Core Web Vitals</text>
+								<text x="302" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Elegant Web Typography</text>
 							</g>
 
-							<!-- Node 3: Automated Content Engine (n8n, Whisper, Claude Code) -->
+							<!-- Node 3: AI Speed-Multiplier (n8n, Whisper, Claude Code) -->
 							<g class="cursor-pointer group/node">
 								<rect x="470" y="80" width="140" height="120" rx="12" fill="#18181b" stroke="#818cf8" stroke-width="2" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" filter="url(#glow)" />
 								<rect x="482" y="94" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
-								<!-- Brain node/gears icon -->
-								<circle cx="494" cy="106" r="4" stroke="#818cf8" stroke-width="1.5" />
-								<line x1="494" y1="98" x2="494" y2="102" stroke="#818cf8" stroke-width="1.5" />
-								<line x1="494" y1="110" x2="494" y2="114" stroke="#818cf8" stroke-width="1.5" />
-								<line x1="486" y1="106" x2="490" y2="106" stroke="#818cf8" stroke-width="1.5" />
-								<line x1="498" y1="106" x2="502" y2="106" stroke="#818cf8" stroke-width="1.5" />
+								<!-- Lightning Icon -->
+								<path d="M 496 98 L 488 106 H 494 L 492 114 L 500 106 H 494 Z" stroke="#818cf8" stroke-width="1.5" fill="none" stroke-linejoin="round" />
 
-								<text x="516" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">Automation</text>
-								<text x="516" y="118" fill="#818cf8" font-size="10" font-weight="semibold" font-family="'Fira Code', monospace">n8n / LLM VM</text>
+								<text x="516" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">3. Amplifiers</text>
+								<text x="516" y="118" fill="#818cf8" font-size="10" font-weight="semibold" font-family="'Fira Code', monospace">n8n / AI Agent</text>
 
-								<text x="482" y="148" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Whisper Transcribe</text>
-								<text x="482" y="162" fill="#34d399" font-size="9" font-weight="bold" font-family="'Fira Code', monospace">● Claude Code Tasks</text>
-								<text x="482" y="176" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● .item Refinery Loops</text>
+								<text x="482" y="148" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Raw Audio Transcribing</text>
+								<text x="482" y="162" fill="#34d399" font-size="9" font-weight="bold" font-family="'Fira Code', monospace">● Automated Outlines</text>
+								<text x="482" y="176" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Instant Formatting Sync</text>
 							</g>
 
-							<!-- Node 4: Semrush & Ahrefs (Analytics / Research) -->
+							<!-- Node 4: Semrush & Ahrefs (SEO Insights) -->
 							<g class="cursor-pointer group/node">
 								<rect x="710" y="80" width="160" height="110" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-emerald-400 group-hover/node:fill-zinc-900" />
 								<rect x="722" y="94" width="24" height="24" rx="6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5" />
-								<!-- Database/Chart Icon -->
-								<ellipse cx="734" cy="101" rx="6" ry="2.5" stroke="#10b981" stroke-width="1.2" fill="none" />
-								<path d="M 728 101 V 106 C 728 108 731 109 734 109 C 737 109 740 108 740 106 V 101" stroke="#10b981" stroke-width="1.2" fill="none" />
-								<path d="M 728 106 V 111 C 728 113 731 114 734 114 C 737 114 740 113 740 111 V 106" stroke="#10b981" stroke-width="1.2" fill="none" />
+								<!-- Search Icon -->
+								<circle cx="732" cy="104" r="4" stroke="#10b981" stroke-width="1.5" />
+								<line x1="735" y1="107" x2="741" y2="113" stroke="#10b981" stroke-width="1.5" />
 
-								<text x="756" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">SEO Layer</text>
-								<text x="756" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Semrush / Ahrefs</text>
+								<text x="756" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">4. SEO Strategy</text>
+								<text x="756" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Ahrefs & Semrush</text>
 
-								<text x="722" y="144" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Organic Volume Auditing</text>
-								<text x="722" y="158" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Keyword Gap Analysis</text>
-								<text x="722" y="172" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Semantic Clustering</text>
+								<text x="722" y="144" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Keyword Gap Discovery</text>
+								<text x="722" y="158" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Search Intent Mapping</text>
+								<text x="722" y="172" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Semantic Topic Clustering</text>
 							</g>
 
-							<!-- Node 5: Lead Nurture & Email (Mailchimp / CRM) -->
+							<!-- Node 5: Lead Nurture & Email (Mailchimp) -->
 							<g class="cursor-pointer group/node">
 								<rect x="710" y="210" width="160" height="110" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" />
 								<rect x="722" y="224" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
-								<!-- Mail/Envelope Icon -->
+								<!-- Mail Icon -->
 								<rect x="726" y="231" width="16" height="10" rx="2" stroke="#818cf8" stroke-width="1.2" fill="none" />
 								<path d="M 726 231 L 734 237 L 742 231" stroke="#818cf8" stroke-width="1.2" />
 
-								<text x="756" y="234" fill="#ffffff" font-size="12" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">Distribution</text>
-								<text x="756" y="248" fill="#a1a1aa" font-size="9" font-family="'Fira Code', monospace">Mailchimp Campaigns</text>
+								<text x="756" y="234" fill="#ffffff" font-size="12" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">5. Amplification</text>
+								<text x="756" y="248" fill="#a1a1aa" font-size="9" font-family="'Fira Code', monospace">Mailchimp Newsletters</text>
 
-								<text x="722" y="274" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Automation Workflows</text>
-								<text x="722" y="288" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Dynamic Segment Sync</text>
-								<text x="722" y="302" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● B2B Lead Nurturing</text>
+								<text x="722" y="274" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Automated Funnel Flows</text>
+								<text x="722" y="288" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● High-Open B2B Copy</text>
+								<text x="722" y="302" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Smart Segment Targeting</text>
 							</g>
 						</svg>
 					</div>
@@ -317,192 +325,263 @@ import '../styles/global.css';
 					<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80">
 						<div class="space-y-2">
 							<h4 class="font-mono text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> HIGH-VELOCITY PRODUCTION
+								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> HUMAN-FIRST STRATEGY
 							</h4>
-							<p class="text-zinc-400 text-sm font-light">
-								I design end-to-end publishing pipelines that integrate modern static hosting (Astro SSG on Cloudflare Pages) and scalable CMS content nodes (WordPress). This eliminates traditional bottlenecks, providing sub-second page delivery with 100/100 search performance scores.
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								Algorithms don't read content—humans do. I focus my energy on discovering unique industry angles, mastering the specific voice of legal, healthcare, or green energy clients, and creating persuasive arguments that build real authority.
 							</p>
 						</div>
 						<div class="space-y-2">
 							<h4 class="font-mono text-xs font-bold text-indigo-400 flex items-center gap-1.5">
-								<span class="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span> TECHNICAL SPEED-MULTIPLIERS
+								<span class="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span> THE TECH SPEED-MULTIPLIER
 							</h4>
-							<p class="text-zinc-400 text-sm font-light">
-								Rather than manually doing repetitive editorial tasks, I configure self-hosted n8n instances, Whisper transcribers, and AI code agents (Jules, Claude Code) to handle raw audio transcripts, semantic content grouping, and draft formatting. This turns weeks of content administration into minutes.
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								Instead of wasting hours on administrative publishing friction, I build custom integrations with tools like n8n and AI agents. From transcribing verbal briefings with Whisper to instantly structuring schemas and routing drafts to WordPress, tech does the busywork so I can create.
 							</p>
 						</div>
 						<div class="space-y-2">
 							<h4 class="font-mono text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> SEMANTIC SEO & DISTRIBUTION
+								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> AUDITING & DISTRIBUTION
 							</h4>
-							<p class="text-zinc-400 text-sm font-light">
-								Using industry-standard toolsets (Semrush, Ahrefs, Mailchimp), I orchestrate search volume keyword audits, organic gap mappings, and B2B newsletter nurturing. This builds a robust feedback loop that drives highly qualified organic traffic and automates subscriber lead acquisition.
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								I back every piece of writing with scientific SEO audits. Using Semrush and Ahrefs, I find keyword content gaps and group them into semantic clusters. Then, I set up automated newsletter funnels in Mailchimp to turn organic traffic into deeply nurtured leads.
 							</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- n8n Workflow Breakdown Section with stunning mockup/screenshots placeholders -->
-			<section id="workflow" class="space-y-16">
+			<!-- Showcase / Creative Case Studies Section -->
+			<section id="showcase" class="space-y-16">
 				<div class="space-y-4">
 					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400">
-						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">AUTOMATED SPEED-MULTIPLIERS</span>
-						<span>CASE STUDY</span>
+						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">CREATIVE SHOWCASE</span>
+						<span>CONTRACTS & CAMPAIGNS</span>
 					</div>
 					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-						Automating Frictional Editorial Workflows
+						Strategic Writing in Action
 					</h2>
 					<p class="text-zinc-400 font-light max-w-3xl text-base sm:text-lg">
-						To maximize publishing output, I orchestrate dynamic integrations that automate technical, editorial, and administrative tasks. The goal is a fluid draft-to-publish process that maintains strict quality standards while removing human administration friction.
+						A look into how I tackle complex, high-stakes communication challenges across diverse industries, and the tech stack I configure to scale their delivery.
 					</p>
 				</div>
 
-				<!-- Screenshot 1: General Canvas -->
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-					<div class="lg:col-span-5 space-y-4">
-						<div class="font-mono text-xs text-zinc-500">01 / INTEGRATED PIPELINE</div>
-						<h3 class="text-2xl font-bold text-white">The Start-to-Publish Orchestrator</h3>
-						<p class="text-zinc-400 text-sm font-light leading-relaxed">
-							The entire publishing workflow is governed by an event-driven master system. When raw voice recordings, transcripts, or drafts hit the ingestion trigger, the pipeline executes sequential nodes to transcribe, audit keywords, format typography, structure schema markup, and draft directly to the target CMS.
-						</p>
-						<ul class="space-y-2 font-mono text-xs text-zinc-400">
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Dynamic integration: Whisper, WordPress APIs, and GitHub
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Automatic semantic clustering and schema creation
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Drastically reduces content launch bottlenecks
-							</li>
-						</ul>
+				<div class="space-y-24">
+					<!-- Project 1: Premium Sign Solutions -->
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+						<div class="lg:col-span-5 space-y-4">
+							<div class="font-mono text-xs text-zinc-500">01 / LONG-FORM B2B THOUGHT LEADERSHIP</div>
+							<h3 class="text-2xl font-bold text-white">Premium Sign Solutions</h3>
+							<div class="text-emerald-400 font-bold text-sm font-mono">+40% Organic Traffic Growth in 3 Months</div>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The Human Creative Challenge:</strong> Physical signage and local branding is a highly visual, tactile industry. The challenge was writing monthly white papers and in-depth articles that translated physical design trends, engineering standards, and green materials into compelling, authoritative B2B copy.
+							</p>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The "Tech-Multiplier" Edge:</strong> I configured custom research agents to analyze architectural trends and map semantic search gaps. I then automated newsletter outreach loops via Mailchimp and backlink monitors using GA4 and GSC to distribute content rapidly.
+							</p>
+							<div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-zinc-500">
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">White Papers</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">B2B Copywriting</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Mailchimp Funnels</span>
+							</div>
+						</div>
+						<div class="lg:col-span-7">
+							<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+								<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+									<div class="flex items-center gap-1.5">
+										<span class="w-2.5 h-2.5 rounded-full bg-red-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-green-500/40"></span>
+									</div>
+									<span class="text-xs font-mono text-zinc-500">premium-sign-solutions-showcase.png</span>
+								</div>
+								<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+									<Image
+										src={projectPremiumSign}
+										alt="Premium Sign Solutions White Papers Showcase"
+										class="w-full h-full object-cover transition duration-500 hover:scale-[1.01]"
+									/>
+								</div>
+								<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+									<span>B2B long-form white paper strategy and trend analysis.</span>
+									<span class="text-emerald-400">Pristine</span>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<div class="lg:col-span-7">
-						<!-- Elegant Screenshot Mockup container with Image inside -->
-						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
-							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
-								<div class="flex items-center gap-1.5">
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+					<!-- Project 2: Fannit Marketing Agency -->
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+						<div class="lg:col-span-7 order-last lg:order-first">
+							<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+								<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+									<div class="flex items-center gap-1.5">
+										<span class="w-2.5 h-2.5 rounded-full bg-red-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-green-500/40"></span>
+									</div>
+									<span class="text-xs font-mono text-zinc-500">fannit-marketing-agency-showcase.png</span>
 								</div>
-								<span class="text-xs font-mono text-zinc-500">n8n-workflow-main.png</span>
+								<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+									<Image
+										src={projectFannit}
+										alt="Fannit Marketing Agency Showcase"
+										class="w-full h-full object-cover transition duration-500 hover:scale-[1.01]"
+									/>
+								</div>
+								<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+									<span>High-scrutiny search-intent copywriting across verticals.</span>
+									<span class="text-emerald-400">Pristine</span>
+								</div>
 							</div>
+						</div>
+						<div class="lg:col-span-5 space-y-4">
+							<div class="font-mono text-xs text-zinc-500">02 / VOICE-ADAPTIVE & COMPLIANT SEO</div>
+							<h3 class="text-2xl font-bold text-white">Fannit Marketing Agency</h3>
+							<div class="text-indigo-400 font-bold text-sm font-mono">High-Scrutiny Content Adaptability</div>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The Human Creative Challenge:</strong> Writing content for clients in legal, healthcare, and finance fields is exceptionally difficult. You must sound highly expert, emotionally supportive, and strictly adhere to compliance guidelines, all while writing copy that naturally satisfies search engine algorithms.
+							</p>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The "Tech-Multiplier" Edge:</strong> I utilized Semrush, Ahrefs, and SurferSEO to outline precise keyword criteria. Additionally, I crafted custom LLM stylistic parameters to quickly check drafts against strict compliance limits and maintain exact voice settings across clients.
+							</p>
+							<div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-zinc-500">
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Voice Adaptation</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SurferSEO Mastery</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Legal & Finance Copy</span>
+							</div>
+						</div>
+					</div>
 
-							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
-								<Image
-									src={n8nWorkflowMain}
-									alt="n8n Main Workflow Canvas"
-									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
-								/>
+					<!-- Project 3: Greening The Islands -->
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+						<div class="lg:col-span-5 space-y-4">
+							<div class="font-mono text-xs text-zinc-500">03 / INVESTIGATIVE REPORTING & SOCIAL NARRATIVES</div>
+							<h3 class="text-2xl font-bold text-white">Greening The Islands</h3>
+							<div class="text-emerald-400 font-bold text-sm font-mono">+20% Cross-Platform Engagement Growth</div>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The Human Creative Challenge:</strong> Sustainability, eco-energy policy, and climate data are notoriously dry and complex. My task was to translate global environmental data into highly engaging monthly summaries, newsroom reports, and social media campaigns that sparked real public conversations.
+							</p>
+							<p class="text-zinc-400 text-sm font-light leading-relaxed">
+								<strong>The "Tech-Multiplier" Edge:</strong> I integrated automated RSS and social-listening filters to capture policy updates instantly. This allowed me to immediately synthesize complex news, coordinate cross-channel campaigns using Meta Business Suite, and track audience metrics.
+							</p>
+							<div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-zinc-500">
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Climate Reporting</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Social Strategy</span>
+								<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Data Synthesis</span>
 							</div>
-							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
-								<span>Fig 1. High-level n8n pipeline orchestrating content ingestion workflows.</span>
-								<span class="text-emerald-400">Ready</span>
+						</div>
+						<div class="lg:col-span-7">
+							<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+								<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+									<div class="flex items-center gap-1.5">
+										<span class="w-2.5 h-2.5 rounded-full bg-red-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></span>
+										<span class="w-2.5 h-2.5 rounded-full bg-green-500/40"></span>
+									</div>
+									<span class="text-xs font-mono text-zinc-500">greening-the-islands-showcase.png</span>
+								</div>
+								<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+									<Image
+										src={projectGreening}
+										alt="Greening The Islands Sustainability Showcase"
+										class="w-full h-full object-cover transition duration-500 hover:scale-[1.01]"
+									/>
+								</div>
+								<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+									<span>Climate policy summaries and social media impact dashboards.</span>
+									<span class="text-emerald-400">Pristine</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</section>
 
-				<!-- Screenshot 2: Webhook Router Node -->
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-					<!-- Screenshot Left on LG -->
-					<div class="lg:col-span-7 order-last lg:order-first">
-						<!-- Elegant Screenshot Mockup container with Image inside -->
-						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
-							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
-								<div class="flex items-center gap-1.5">
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-								</div>
-								<span class="text-xs font-mono text-zinc-500">n8n-webhook-router.png</span>
-							</div>
-
-							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
-								<Image
-									src={n8nWebhookRouter}
-									alt="n8n Webhook Router node"
-									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
-								/>
-							</div>
-							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
-								<span>Fig 2. Configuration showing custom router mapping JSON webhook payloads.</span>
-								<span class="text-emerald-400">Ready</span>
-							</div>
-						</div>
+			<!-- "Idea Person" Origin Story Section -->
+			<section id="about" class="space-y-12">
+				<div class="max-w-3xl space-y-4">
+					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400">
+						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">MEET JACQUES</span>
+						<span>THE ORIGIN STORY</span>
 					</div>
-
-					<div class="lg:col-span-5 space-y-4">
-						<div class="font-mono text-xs text-zinc-500">02 / ENDPOINT MANAGEMENT</div>
-						<h3 class="text-2xl font-bold text-white">Dynamic Asset & Webhook Routing</h3>
-						<p class="text-zinc-400 text-sm font-light leading-relaxed">
-							I configure webhook and API routers to securely transmit raw assets and semantic drafts between tools. Security is maintained by masking endpoints and credentials using localized environment parameters, keeping database triggers and CRM syncing fluid and responsive.
-						</p>
-						<ul class="space-y-2 font-mono text-xs text-zinc-400">
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Automatic routing based on asset metadata and content tags
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Secure integration with WordPress REST API and Mailchimp webhooks
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Zero-lag response payloads for automated CRM synchronizations
-							</li>
-						</ul>
-					</div>
+					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+						An Artist, Educator, and Systems Builder
+					</h2>
+					<p class="text-zinc-400 font-light text-base sm:text-lg">
+						Long before AI or web automation tools emerged, I spent decades exploring color, education, and ecological systems. My approach to digital content is rooted in these three core disciplines.
+					</p>
 				</div>
 
-				<!-- Screenshot 3: Item-level Iteration Detail -->
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-					<div class="lg:col-span-5 space-y-4">
-						<div class="font-mono text-xs text-zinc-500">03 / SCIENTIFIC & TECHNICAL REFINERY</div>
-						<h3 class="text-2xl font-bold text-white">Data Refinery & Semantic Ingestion Engine</h3>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Artistry Card -->
+					<div class="relative rounded-2xl border border-zinc-900 bg-zinc-900/40 p-6 space-y-4 group hover:border-zinc-850 hover:bg-zinc-900/60 transition-all">
+						<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+							<span class="text-xl">🎨</span>
+						</div>
+						<h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">The Creative Artist</h3>
+						<div class="text-xs font-mono text-zinc-500">Paint FX & Decorative Finishes</div>
 						<p class="text-zinc-400 text-sm font-light leading-relaxed">
-							Standard workflow integrations often default to batch execution using <code class="text-zinc-300 bg-zinc-900 px-1 py-0.5 rounded text-xs font-mono">.first()</code>. In this refinery manifest setup, we configure all JavaScript nodes and databases to map each research node using explicit <code class="text-emerald-400 bg-zinc-900 px-1 py-0.5 rounded text-xs font-mono">.item</code> syntax. By leveraging custom logic such as the **Ingredient Batch Iterator** and **Refinery Manifest**, loops process every row sequentially, completely eliminating payload loss during concurrent technical data stream bursts.
+							Armed with a Diploma in Paint Finishes, I founded Paint FX, delivering premium decorative paint services and workshops. I understand aesthetics, visual hierarchies, and details. This artistic lens ensures the web layout, typography, and visuals I deploy are as compelling as the copy itself.
 						</p>
-						<ul class="space-y-2 font-mono text-xs text-zinc-400">
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Prevents data loss by processing arrays row-by-row
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Explicit `.item` reference loops inside Refinery nodes
-							</li>
-							<li class="flex items-center gap-2">
-								<span class="text-emerald-400">✔</span> Robust, reliable, error-tolerant sync pipeline logic
-							</li>
-						</ul>
 					</div>
 
-					<div class="lg:col-span-7">
-						<!-- Elegant Screenshot Mockup container with Image inside -->
-						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
-							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
-								<div class="flex items-center gap-1.5">
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
-								</div>
-								<span class="text-xs font-mono text-zinc-500">n8n-item-iteration.png</span>
-							</div>
-
-							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
-								<Image
-									src={n8nItemIteration}
-									alt="n8n Item Iteration Detail"
-									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
-								/>
-							</div>
-							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
-								<span>Fig 3. custom loop executing strict item-level mutation mapping.</span>
-								<span class="text-emerald-400">Ready</span>
-							</div>
+					<!-- Educator Card -->
+					<div class="relative rounded-2xl border border-zinc-900 bg-zinc-900/40 p-6 space-y-4 group hover:border-zinc-850 hover:bg-zinc-900/60 transition-all">
+						<div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+							<span class="text-xl">📚</span>
 						</div>
+						<h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">The Master Educator</h3>
+						<div class="text-xs font-mono text-zinc-500">Plascon Product Knowledge Trainer</div>
+						<p class="text-zinc-400 text-sm font-light leading-relaxed">
+							As a certified Assessor and Train-the-Trainer, I spent years as a Product Knowledge Trainer at Plascon South Africa, improving retail sales performance by 25%. I know how to break down highly complex, dense material and translate it into simple, emotionally sticky, and highly educational copy.
+						</p>
+					</div>
+
+					<!-- Ecological Systems Card -->
+					<div class="relative rounded-2xl border border-zinc-900 bg-zinc-900/40 p-6 space-y-4 group hover:border-zinc-850 hover:bg-zinc-900/60 transition-all">
+						<div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+							<span class="text-xl">🌱</span>
+						</div>
+						<h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">The Systems Designer</h3>
+						<div class="text-xs font-mono text-zinc-500">Founder of Positive Cycle</div>
+						<p class="text-zinc-400 text-sm font-light leading-relaxed">
+							I founded Positive Cycle, a sustainable business that integrated agricultural development and ecohydrology. When I build modern automation workflows, I am not thinking like a coder—I am thinking like an ecologist designing a stable, sustainable, and self-replenishing ecosystem.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Human-Driven AI Manifesto -->
+			<section id="manifesto" class="relative rounded-2xl border border-zinc-800 bg-zinc-900 p-8 md:p-12 shadow-2xl overflow-hidden group">
+				<div class="absolute top-0 right-0 px-4 py-2 bg-zinc-950 border-l border-b border-zinc-800 font-mono text-xs text-emerald-400 rounded-tr-xl rounded-bl-xl">
+					MANIFESTO.md
+				</div>
+
+				<div class="max-w-3xl space-y-6">
+					<div class="font-mono text-xs text-indigo-400 tracking-wider">MY PHILOSOPHY ON AI & AUTOMATION</div>
+					<h2 class="text-3xl sm:text-4xl font-serif italic text-white leading-tight">
+						"I don't let AI write for me. I use AI to help me scale what I write."
+					</h2>
+					<div class="space-y-4 text-zinc-300 font-light text-base sm:text-lg leading-relaxed">
+						<p>
+							Let’s be honest: AI-generated text is often dry, robotic, and instantly recognizable. It lacks an emotional hook, structured nuance, and the subtle warmth of genuine human experience.
+						</p>
+						<p>
+							That’s why my creative process remains <strong>100% human-driven</strong>.
+						</p>
+						<p>
+							I use automation tools, Whisper, and advanced AI models not to generate my thoughts, but to handle the heavy technical lifting:
+						</p>
+						<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-mono text-zinc-400 pt-2">
+							<li class="flex items-center gap-2"><span class="text-emerald-400">⚡</span> Brainstorming 50 hooks in seconds</li>
+							<li class="flex items-center gap-2"><span class="text-emerald-400">⚡</span> Semantic search intent audits</li>
+							<li class="flex items-center gap-2"><span class="text-emerald-400">⚡</span> Formatting rich markdown schema</li>
+							<li class="flex items-center gap-2"><span class="text-emerald-400">⚡</span> Automating publication flows</li>
+						</ul>
+						<p class="pt-4 text-zinc-400 text-sm italic">
+							This keeps my mind entirely free to focus on what computers simply cannot do: understanding human emotion, crafting persuasive copy, and inventing big ideas.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -511,14 +590,14 @@ import '../styles/global.css';
 			<section id="experience" class="space-y-16">
 				<div class="space-y-4">
 					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400">
-						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">PROVEN WORK</span>
-						<span>CONTRACTS & RETAINERS</span>
+						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">TIMELINE</span>
+						<span>CAREER OVERVIEW</span>
 					</div>
 					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-						Strategic Content Management & SEO Experience
+						Professional Trajectory
 					</h2>
 					<p class="text-zinc-400 font-light max-w-3xl text-base sm:text-lg">
-						I lead professional content architecture and SEO retainers for organisations demanding authority-building search visibility, streamlined workflow operations, and high-impact organic copy.
+						A timeline of my professional writing, consulting, systems training, and entrepreneurial work.
 					</p>
 				</div>
 
@@ -533,72 +612,120 @@ import '../styles/global.css';
 						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
 							<div class="md:col-span-3">
 								<span class="text-emerald-400 font-mono text-sm font-semibold">July 2023 — Present</span>
-								<h4 class="text-zinc-500 text-xs font-mono mt-1">High-Scrutiny SEO Copywriting & Content Strategy</h4>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">SEO Copywriting & Strategy</h4>
 							</div>
-							<div class="md:col-span-9 space-y-3">
+							<div class="md:col-span-9 space-y-2">
 								<h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
-									Fannit Marketing Agency <span class="text-zinc-500 font-light text-base">| Senior Content Writer & SEO Specialist (Contract)</span>
+									Fannit Marketing Agency <span class="text-zinc-500 font-light text-base">| Content Writer & SEO Strategist</span>
 								</h3>
 								<p class="text-zinc-400 text-sm leading-relaxed font-light">
-									Craft high-converting, authority-building SEO content and articles for clients in competitive, highly regulated sectors like Legal, Health, and Finance. Execute target keyword mapping and semantic clustering utilizing SurferSEO and Ahrefs to capture organic search intent and drive conversions.
+									Adapt tone and style for diverse clients across legal, health, and finance sectors. Create SEO-optimized blogs and web pages using SurferSEO, Ahrefs, and Google Docs. Collaborate via Teamwork and Slack to align content with broader marketing goals.
 								</p>
-								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SEO Copywriting</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Semantic Keyword Mapping</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SurferSEO & Ahrefs</span>
-								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Experience 2: Greening the Islands -->
+					<!-- Experience 2: Premium Sign Solutions -->
 					<div class="relative group">
 						<!-- Timeline node -->
 						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-indigo-400 group-hover:scale-125 transition-transform duration-200"></div>
 
 						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
 							<div class="md:col-span-3">
-								<span class="text-indigo-400 font-mono text-sm font-semibold">June 2023 — Present</span>
-								<h4 class="text-zinc-500 text-xs font-mono mt-1">Investigative Reporting & Social Media Management</h4>
+								<span class="text-indigo-400 font-mono text-sm font-semibold">April 2023 — Present</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">B2B Content Specialist</h4>
 							</div>
-							<div class="md:col-span-9 space-y-3">
+							<div class="md:col-span-9 space-y-2">
 								<h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-200">
-									Greening the Islands Foundation <span class="text-zinc-500 font-light text-base">| Social Media Manager & Editorial Contributor</span>
+									Premium Sign Solutions <span class="text-zinc-500 font-light text-base">| Marketing Content Specialist</span>
 								</h3>
 								<p class="text-zinc-400 text-sm leading-relaxed font-light">
-									Research and write high-impact editorial features, monthly news summaries, and long-form investigative reports on global sustainability and green energy policies. Direct organic social media strategies and performance metrics, successfully growing cross-platform community engagement by over 20%.
+									Write monthly white papers and SEO blogs, increasing organic traffic by 40% over three months. Manage backlink strategies and monitor traffic/conversion metrics via GSC and GA4. Coordinate social campaigns and video content using CapCut and YouTube.
 								</p>
-								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Journalistic Reporting</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Social Strategy</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Climate Policy Analysis</span>
-								</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Experience 3: Premium Sign Solutions -->
+					<!-- Experience 3: Greening the Islands -->
 					<div class="relative group">
 						<!-- Timeline node -->
 						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform duration-200"></div>
 
 						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
 							<div class="md:col-span-3">
-								<span class="text-emerald-400 font-mono text-sm font-semibold">April 2023 — Present</span>
-								<h4 class="text-zinc-500 text-xs font-mono mt-1">Technical SEO, Local Copywriting, & Email Marketing</h4>
+								<span class="text-emerald-400 font-mono text-sm font-semibold">June 2023 — Present</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Sustainability Reporting</h4>
 							</div>
-							<div class="md:col-span-9 space-y-3">
+							<div class="md:col-span-9 space-y-2">
 								<h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
-									Premium Sign Solutions <span class="text-zinc-500 font-light text-base">| Marketing Content Specialist</span>
+									Greening The Islands <span class="text-zinc-500 font-light text-base">| Social Media Manager & Newsroom Contributor</span>
 								</h3>
 								<p class="text-zinc-400 text-sm leading-relaxed font-light">
-									Architect hyper-localized SEO blog strategies and authoritative white papers to drive local commercial-intent search traffic. Orchestrate end-to-end social media messaging campaigns and manage high-engagement Mailchimp newsletter distribution pipelines to nurture B2B leads.
+									Develop monthly news summaries and social content that increased engagement by 20%. Use Teamwork and Meta Business Suite to manage campaigns and performance analytics.
 								</p>
-								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Local SEO</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Mailchimp Campaigns</span>
-									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">B2B Copywriting</span>
-								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Experience 4: Freelance Copywriting -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-indigo-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-indigo-400 font-mono text-sm font-semibold">March 2020 — Present</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Independent Consulting</h4>
+							</div>
+							<div class="md:col-span-9 space-y-2">
+								<h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-200">
+									Freelance Copywriter & Marketing Consultant <span class="text-zinc-500 font-light text-base">| Upwork & PeoplePerHour</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Delivered tailored content strategies, landing page copy, and persuasive brand messaging for global B2B and direct-to-consumer clients. Used Semrush and Mailchimp to drive campaigns.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Experience 5: Positive Cycle -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-emerald-400 font-mono text-sm font-semibold">Aug 2010 — Feb 2020</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Agricultural & Ecohydrology Design</h4>
+							</div>
+							<div class="md:col-span-9 space-y-2">
+								<h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
+									Positive Cycle PTY LTD <span class="text-zinc-500 font-light text-base">| Founder & Manager</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Built a sustainable business integrating agricultural development and ecohydrology. Created training materials and marketing strategies that grew brand visibility by 40%.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Experience 6: Plascon Training -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-indigo-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-indigo-400 font-mono text-sm font-semibold">Aug 2005 — July 2010</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Corporate Technical Training</h4>
+							</div>
+							<div class="md:col-span-9 space-y-2">
+								<h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-200">
+									Plascon South Africa <span class="text-zinc-500 font-light text-base">| Product Knowledge Trainer</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Delivered product training across retail teams, improving sales performance by 25%. Managed event logistics and developed custom training content and guidelines.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -609,9 +736,9 @@ import '../styles/global.css';
 			<section id="contact" class="pt-12 border-t border-zinc-900">
 				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 					<div class="lg:col-span-6 space-y-4">
-						<h2 class="text-3xl font-extrabold text-white">Let's Orchestrate Something Epic</h2>
+						<h2 class="text-3xl font-extrabold text-white">Let's Craft Something Remarkable</h2>
 						<p class="text-zinc-400 font-light leading-relaxed">
-							Whether you need a full systems overhaul, high-performance Astro migrations, self-hosted n8n setups, or absolute 100/100 Core Web Vitals optimization, let's connect. I work on focused, high-impact contract retainers.
+							Looking for an intuitive "idea person" to manage your B2B content pipeline, write voice-adaptive copy, or optimize your search-visibility engine? Let’s talk. I work on focused, high-impact monthly contract retainers.
 						</p>
 						<div class="space-y-2 pt-2 font-mono text-xs text-zinc-400">
 							<div class="flex items-center gap-2">
@@ -643,7 +770,7 @@ import '../styles/global.css';
 								</div>
 								<div>
 									<label class="block font-mono text-xs text-zinc-500 mb-1">project_parameters (message)</label>
-									<textarea rows="3" placeholder="Describe the automation or web pipeline requirement..." class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all"></textarea>
+									<textarea rows="3" placeholder="Describe your content writing or workflow speed-multiplier goals..." class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all"></textarea>
 								</div>
 								<button class="w-full py-2.5 rounded bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold transition-colors font-mono text-xs tracking-wider">
 									EXECUTE_CONNECTION_REQUEST
@@ -659,9 +786,9 @@ import '../styles/global.css';
 						© {new Date().getFullYear()} jacques-damhuis@portfolio. Built with Astro, Tailwind & ❤️.
 					</div>
 					<div class="flex items-center gap-4">
-						<a href="#hero" class="hover:text-zinc-300">SYSTEM_UP</a>
+						<a href="#hero" class="hover:text-zinc-300">HUMAN_CORE_OK</a>
 						<span>|</span>
-						<a href="#blueprint" class="hover:text-zinc-300">ROUTER_SECURE</a>
+						<a href="#pipeline" class="hover:text-zinc-300">PIPELINE_STABLE</a>
 						<span>|</span>
 						<span class="text-emerald-400">CF_EDGE_OK</span>
 					</div>
