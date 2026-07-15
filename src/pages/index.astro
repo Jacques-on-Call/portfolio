@@ -131,13 +131,13 @@ import '../styles/global.css';
 								<span class="text-xs font-mono text-zinc-500">operator.config.json</span>
 							</div>
 
-							<!-- Bio Details + Optional Profile Pic Headshot wrapper -->
+							<!-- Bio Details + Profile Pic Headshot wrapper -->
 							<div class="flex items-center gap-4">
 								<div class="relative w-16 h-16 rounded-xl bg-zinc-800 overflow-hidden border-2 border-emerald-500/40 flex-shrink-0">
 									<Image
 										src={headshot}
 										alt="Headshot Portrait"
-										class="w-full h-full object-cover grayscale contrast-125 opacity-80"
+										class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
 										width={64}
 										height={64}
 									/>
@@ -392,25 +392,12 @@ import '../styles/global.css';
 							</div>
 
 							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element -->
+								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
 								<Image
 									src={n8nWorkflowMain}
 									alt="n8n Main Workflow Canvas"
-									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
 								/>
-
-								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
-								<div class="z-10 p-6 text-center space-y-4 max-w-md">
-									<div class="inline-flex p-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-									</div>
-									<div class="space-y-1">
-										<h4 class="font-bold text-white text-sm">Visual Workflow Canvas Placeholder</h4>
-										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
-											Replace with your n8n main screenshot in <code class="text-zinc-400">src/assets/images/n8n-workflow-main.png</code>
-										</p>
-									</div>
-								</div>
 							</div>
 							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
 								<span>Fig 1. High-level n8n pipeline orchestrating content ingestion workflows.</span>
@@ -436,25 +423,12 @@ import '../styles/global.css';
 							</div>
 
 							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element -->
+								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
 								<Image
 									src={n8nWebhookRouter}
 									alt="n8n Webhook Router node"
-									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
 								/>
-
-								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
-								<div class="z-10 p-6 text-center space-y-4 max-w-md">
-									<div class="inline-flex p-3 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-									</div>
-									<div class="space-y-1">
-										<h4 class="font-bold text-white text-sm">Custom Webhook Node Config Placeholder</h4>
-										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
-											Replace with your webhook screenshot in <code class="text-zinc-400">src/assets/images/n8n-webhook-router.png</code>
-										</p>
-									</div>
-								</div>
 							</div>
 							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
 								<span>Fig 2. Configuration showing custom router mapping JSON webhook payloads.</span>
@@ -517,25 +491,12 @@ import '../styles/global.css';
 							</div>
 
 							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
-								<!-- The actual optimized Astro Image element -->
+								<!-- The actual optimized Astro Image element - Renders at full opacity, scaled cleanly inside mockup frame -->
 								<Image
 									src={n8nItemIteration}
 									alt="n8n Item Iteration Detail"
-									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+									class="w-full h-full object-contain transition duration-500 hover:scale-[1.01]"
 								/>
-
-								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
-								<div class="z-10 p-6 text-center space-y-4 max-w-md">
-									<div class="inline-flex p-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"></path></svg>
-									</div>
-									<div class="space-y-1">
-										<h4 class="font-bold text-white text-sm">Item-Level Iteration Logic Placeholder</h4>
-										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
-											Replace with your mutation loop screenshot in <code class="text-zinc-400">src/assets/images/n8n-item-iteration.png</code>
-										</p>
-									</div>
-								</div>
 							</div>
 							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
 								<span>Fig 3. custom loop executing strict item-level mutation mapping.</span>
