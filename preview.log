@@ -1,0 +1,7 @@
+
+> red-raspberry@0.0.1 preview
+> astro preview --port 3000
+
+ astro  v7.0.9 ready in 42 ms
+┃ Local    http://localhost:3000/
+┃ Network  use --host to expose
