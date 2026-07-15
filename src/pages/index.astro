@@ -1,0 +1,730 @@
+---
+import { Image } from 'astro:assets';
+import headshot from '../assets/images/headshot.jpg';
+import n8nWorkflowMain from '../assets/images/n8n-workflow-main.png';
+import n8nWebhookRouter from '../assets/images/n8n-webhook-router.png';
+import n8nItemIteration from '../assets/images/n8n-item-iteration.png';
+
+// Global stylesheet import
+import '../styles/global.css';
+---
+
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Content Architect & Automation Engineer | Portfolio</title>
+		<!-- Google Fonts for custom tech feel -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<style>
+			body {
+				font-family: 'Plus Jakarta Sans', sans-serif;
+			}
+			.font-mono {
+				font-family: 'Fira Code', monospace;
+			}
+		</style>
+	</head>
+	<body class="bg-zinc-950 text-zinc-100 min-h-screen selection:bg-emerald-500/30 selection:text-emerald-400 overflow-x-hidden antialiased">
+
+		<!-- Subtle ambient background glow -->
+		<div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-950/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+		<div class="absolute top-[1200px] right-1/4 w-[500px] h-[500px] bg-emerald-950/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+		<div class="absolute bottom-40 left-1/3 w-[600px] h-[600px] bg-indigo-950/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+		<!-- Nav Bar -->
+		<header class="sticky top-0 z-50 backdrop-blur-md bg-zinc-950/80 border-b border-zinc-900 transition-colors duration-300">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+				<a href="#" class="flex items-center gap-2 group">
+					<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-emerald-400 p-[1.5px]">
+						<div class="w-full h-full bg-zinc-950 rounded-lg flex items-center justify-center">
+							<span class="font-mono text-xs font-bold text-emerald-400 group-hover:text-indigo-400 transition-colors duration-200">OP</span>
+						</div>
+					</div>
+					<span class="font-mono text-sm tracking-tight text-zinc-300 group-hover:text-white transition-colors duration-200">
+						operator<span class="text-emerald-400">@</span>portfolio
+					</span>
+				</a>
+
+				<!-- Desktop Nav Links -->
+				<nav class="hidden md:flex items-center gap-8 text-sm">
+					<a href="#hero" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Overview</a>
+					<a href="#blueprint" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">System Blueprint</a>
+					<a href="#workflow" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">n8n Pipeline</a>
+					<a href="#experience" class="text-zinc-400 hover:text-white hover:underline decoration-emerald-400 decoration-2 underline-offset-4 transition-colors duration-200">Experience</a>
+					<a href="#contact" class="px-4 py-1.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-200 hover:text-white hover:bg-zinc-800 hover:border-emerald-500/50 transition-all duration-200">Contact</a>
+				</nav>
+
+				<!-- Mobile menu button (simple CSS-based target toggle) -->
+				<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded hover:bg-zinc-900 text-zinc-400 hover:text-zinc-200 focus:outline-none">
+					<span class="w-6 h-0.5 bg-current"></span>
+					<span class="w-6 h-0.5 bg-current"></span>
+					<span class="w-6 h-0.5 bg-current"></span>
+				</button>
+			</div>
+			<!-- Mobile Nav Menu -->
+			<div id="mobile-menu" class="hidden md:hidden border-b border-zinc-900 bg-zinc-950/95 backdrop-blur-md px-4 py-4 space-y-3">
+				<a href="#hero" class="block text-zinc-400 hover:text-white text-sm">Overview</a>
+				<a href="#blueprint" class="block text-zinc-400 hover:text-white text-sm">System Blueprint</a>
+				<a href="#workflow" class="block text-zinc-400 hover:text-white text-sm">n8n Pipeline</a>
+				<a href="#experience" class="block text-zinc-400 hover:text-white text-sm">Experience</a>
+				<a href="#contact" class="block text-zinc-400 hover:text-white text-sm">Contact</a>
+			</div>
+		</header>
+
+		<!-- Main Page Content -->
+		<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+
+			<!-- Hero Section -->
+			<section id="hero" class="pt-8 md:pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+				<div class="lg:col-span-7 space-y-6">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono">
+						<span class="flex h-2 w-2 relative">
+							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+							<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+						</span>
+						Available for Strategic Retainers
+					</div>
+					<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+						Scaling Search Visibility via <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Multi-Tool Systems Automation</span>
+					</h1>
+					<p class="text-zinc-400 text-lg sm:text-xl max-w-2xl font-light">
+						I bridge the gap between high-end SEO architecture and modern serverless engineering. By connecting fast Astro sites to event-driven web pipelines, I create organic content machines that rank instantly and operate autonomously.
+					</p>
+
+					<!-- Stack Tech Badges -->
+					<div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-zinc-400">
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Astro v5 (SSG)</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Cloudflare Pages</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">n8n Automation</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Supabase</span>
+						<span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800">Tailwind CSS</span>
+					</div>
+
+					<!-- Hero CTAs -->
+					<div class="flex flex-col sm:flex-row gap-4 pt-4">
+						<a href="#blueprint" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-emerald-500 text-zinc-950 hover:bg-emerald-400 text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20 hover:translate-y-[-1px]">
+							Explore System Design
+						</a>
+						<a href="#experience" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-sm font-semibold transition-all">
+							View Contract Retainers
+						</a>
+					</div>
+				</div>
+
+				<!-- Headshot / Technical Identity card -->
+				<div class="lg:col-span-5 flex justify-center">
+					<div class="relative w-full max-w-sm group">
+						<div class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-indigo-500 to-emerald-500 opacity-25 blur-lg group-hover:opacity-40 transition duration-500"></div>
+						<div class="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-6">
+							<!-- Header with decorative code controls -->
+							<div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+								<div class="flex items-center gap-1.5">
+									<span class="w-3 h-3 rounded-full bg-red-500/40"></span>
+									<span class="w-3 h-3 rounded-full bg-yellow-500/40"></span>
+									<span class="w-3 h-3 rounded-full bg-green-500/40"></span>
+								</div>
+								<span class="text-xs font-mono text-zinc-500">operator.config.json</span>
+							</div>
+
+							<!-- Bio Details + Optional Profile Pic Headshot wrapper -->
+							<div class="flex items-center gap-4">
+								<div class="relative w-16 h-16 rounded-xl bg-zinc-800 overflow-hidden border-2 border-emerald-500/40 flex-shrink-0">
+									<Image
+										src={headshot}
+										alt="Headshot Portrait"
+										class="w-full h-full object-cover grayscale contrast-125 opacity-80"
+										width={64}
+										height={64}
+									/>
+									<!-- Small offline/online indicator -->
+									<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-zinc-900 rounded-full"></span>
+								</div>
+								<div>
+									<h3 class="font-bold text-white text-lg">System Architect</h3>
+									<p class="text-sm font-mono text-zinc-500">Node / Web Automation / SEO</p>
+								</div>
+							</div>
+
+							<!-- Tech Stats inside Card -->
+							<div class="grid grid-cols-2 gap-4 bg-zinc-950/50 p-4 rounded-xl border border-zinc-800/80 font-mono text-xs">
+								<div>
+									<div class="text-zinc-500">Lighthouse Score</div>
+									<div class="text-emerald-400 font-bold text-sm">100 / 100</div>
+								</div>
+								<div>
+									<div class="text-zinc-500">Hosting</div>
+									<div class="text-indigo-400 font-bold text-sm">Cloudflare Edge</div>
+								</div>
+								<div>
+									<div class="text-zinc-500">Engine</div>
+									<div class="text-emerald-400 font-bold text-sm">n8n (Self-Hosted)</div>
+								</div>
+								<div>
+									<div class="text-zinc-500">Batch Iteration</div>
+									<div class="text-indigo-400 font-bold text-sm">.item Loop Level</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Interactive SVG System Architecture Diagram -->
+			<section id="blueprint" class="space-y-12">
+				<div class="text-center max-w-3xl mx-auto space-y-4">
+					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+						The Production Infrastructure Blueprint
+					</h2>
+					<p class="text-zinc-400 font-light text-base sm:text-lg">
+						A modern, highly resilient multi-tool automation ecosystem designed to deliver sub-second global speeds and infinite content scaling.
+					</p>
+				</div>
+
+				<!-- SVG Core Layout Container -->
+				<div class="p-6 md:p-8 bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl relative overflow-hidden group">
+					<div class="absolute top-0 left-0 px-4 py-2 bg-zinc-950 border-r border-b border-zinc-800 font-mono text-xs text-indigo-400 rounded-tl-xl rounded-br-xl">
+						SYSTEM_ARCHITECTURE_MAP.svg
+					</div>
+
+					<div class="w-full pt-8 flex justify-center">
+						<!-- Custom stunning SVG Diagram -->
+						<svg class="w-full max-w-4xl h-auto" viewBox="0 0 900 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<!-- Definition of gradients and markers -->
+							<defs>
+								<linearGradient id="astro-to-cf" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" stop-color="#818cf8" />
+									<stop offset="100%" stop-color="#34d399" />
+								</linearGradient>
+								<linearGradient id="cf-to-n8n" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" stop-color="#34d399" />
+									<stop offset="100%" stop-color="#818cf8" />
+								</linearGradient>
+								<linearGradient id="n8n-to-db" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" stop-color="#818cf8" />
+									<stop offset="100%" stop-color="#10b981" />
+								</linearGradient>
+								<filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+									<feGaussianBlur stdDeviation="6" result="blur" />
+									<feComposite in="SourceGraphic" in2="blur" operator="over" />
+								</filter>
+							</defs>
+
+							<!-- Grid Background for the canvas -->
+							<pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+								<path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"/>
+							</pattern>
+							<rect width="900" height="360" fill="url(#grid)" />
+
+							<!-- Flow lines with animation paths (simulated via dashed lines) -->
+							<path d="M 190 140 H 290" stroke="url(#astro-to-cf)" stroke-width="2" stroke-dasharray="4 4" />
+							<path d="M 430 140 H 470" stroke="url(#cf-to-n8n)" stroke-width="2" stroke-dasharray="4 4" />
+							<path d="M 610 140 H 710" stroke="url(#n8n-to-db)" stroke-width="2" stroke-dasharray="4 4" />
+							<path d="M 540 180 V 240 H 710" stroke="url(#n8n-to-db)" stroke-width="1.5" stroke-dasharray="4 4" />
+
+							<!-- Interactive Hoverable Nodes -->
+
+							<!-- Node 1: Astro / GitHub -->
+							<g class="cursor-pointer group/node">
+								<rect x="30" y="80" width="160" height="120" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" />
+								<rect x="42" y="94" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
+								<!-- Code Icon in node -->
+								<path d="M 49 106 L 54 101 L 49 96" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M 59 106 L 54 101 L 59 96" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+								<text x="78" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">Astro Front-End</text>
+								<text x="78" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">GitHub Trigger</text>
+
+								<text x="42" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Astro v5 (SSG)</text>
+								<text x="42" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Strict HTML footprint</text>
+								<text x="42" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Semantic Schema SEO</text>
+							</g>
+
+							<!-- Node 2: Cloudflare Pages -->
+							<g class="cursor-pointer group/node">
+								<rect x="290" y="80" width="140" height="120" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-emerald-400 group-hover/node:fill-zinc-900" />
+								<rect x="302" y="94" width="24" height="24" rx="6" fill="#34d399" fill-opacity="0.1" stroke="#34d399" stroke-width="1.5" />
+								<!-- Cloud Icon -->
+								<path d="M 314 99 C 316 99 317 100 318 101 C 319 100 321 99 322 100 C 324 100 325 102 324 104 L 324 107 C 324 108 323 109 322 109 H 308 C 307 109 306 108 306 107 C 306 104 308 102 310 102 C 311 100 312 99 314 99 Z" stroke="#34d399" stroke-width="1.2" fill="none" />
+
+								<text x="336" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">CF Pages</text>
+								<text x="336" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Global Edge</text>
+
+								<text x="302" y="148" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Smart CDN Caching</text>
+								<text x="302" y="162" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Sub-second responses</text>
+								<text x="302" y="176" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Max Security Guard</text>
+							</g>
+
+							<!-- Node 3: n8n Automation Engine -->
+							<g class="cursor-pointer group/node">
+								<rect x="470" y="80" width="140" height="120" rx="12" fill="#18181b" stroke="#818cf8" stroke-width="2" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" filter="url(#glow)" />
+								<rect x="482" y="94" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
+								<!-- Brain node/gears icon -->
+								<circle cx="494" cy="106" r="4" stroke="#818cf8" stroke-width="1.5" />
+								<line x1="494" y1="98" x2="494" y2="102" stroke="#818cf8" stroke-width="1.5" />
+								<line x1="494" y1="110" x2="494" y2="114" stroke="#818cf8" stroke-width="1.5" />
+								<line x1="486" y1="106" x2="490" y2="106" stroke="#818cf8" stroke-width="1.5" />
+								<line x1="498" y1="106" x2="502" y2="106" stroke="#818cf8" stroke-width="1.5" />
+
+								<text x="516" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">n8n Engine</text>
+								<text x="516" y="118" fill="#818cf8" font-size="10" font-weight="semibold" font-family="'Fira Code', monospace">Oracle VPS</text>
+
+								<text x="482" y="148" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Webhook Router Node</text>
+								<text x="482" y="162" fill="#34d399" font-size="9" font-weight="bold" font-family="'Fira Code', monospace">● .item Iteration</text>
+								<text x="482" y="176" fill="#a1a1aa" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Payload Mutation JS</text>
+							</g>
+
+							<!-- Node 4: Supabase / Databases -->
+							<g class="cursor-pointer group/node">
+								<rect x="710" y="80" width="160" height="110" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-emerald-400 group-hover/node:fill-zinc-900" />
+								<rect x="722" y="94" width="24" height="24" rx="6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5" />
+								<!-- Database Icon -->
+								<ellipse cx="734" cy="101" rx="6" ry="2.5" stroke="#10b981" stroke-width="1.2" fill="none" />
+								<path d="M 728 101 V 106 C 728 108 731 109 734 109 C 737 109 740 108 740 106 V 101" stroke="#10b981" stroke-width="1.2" fill="none" />
+								<path d="M 728 106 V 111 C 728 113 731 114 734 114 C 737 114 740 113 740 111 V 106" stroke="#10b981" stroke-width="1.2" fill="none" />
+
+								<text x="756" y="104" fill="#ffffff" font-size="13" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">Supabase DB</text>
+								<text x="756" y="118" fill="#a1a1aa" font-size="10" font-family="'Fira Code', monospace">Data Layer</text>
+
+								<text x="722" y="144" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Relational Indexing</text>
+								<text x="722" y="158" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Event Triggers & Logs</text>
+								<text x="722" y="172" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Vector Embedding Node</text>
+							</g>
+
+							<!-- Node 5: Checkout Gateways (Stripe/Lemon Squeezy) -->
+							<g class="cursor-pointer group/node">
+								<rect x="710" y="210" width="160" height="110" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5" class="transition-all duration-300 group-hover/node:stroke-indigo-400 group-hover/node:fill-zinc-900" />
+								<rect x="722" y="224" width="24" height="24" rx="6" fill="#818cf8" fill-opacity="0.1" stroke="#818cf8" stroke-width="1.5" />
+								<!-- Money/Card Icon -->
+								<rect x="726" y="231" width="16" height="10" rx="2" stroke="#818cf8" stroke-width="1.2" fill="none" />
+								<line x1="726" y1="235" x2="742" y2="235" stroke="#818cf8" stroke-width="1.2" />
+
+								<text x="756" y="234" fill="#ffffff" font-size="12" font-weight="bold" font-family="'Plus Jakarta Sans', sans-serif">External APIs</text>
+								<text x="756" y="248" fill="#a1a1aa" font-size="9" font-family="'Fira Code', monospace">Lemon Squeezy / Stripe</text>
+
+								<text x="722" y="274" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Instant Webhook Ingestion</text>
+								<text x="722" y="288" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Secure State Sync</text>
+								<text x="722" y="302" fill="#71717a" font-size="9" font-family="'Plus Jakarta Sans', sans-serif">● Customer Event Lifecycle</text>
+							</g>
+						</svg>
+					</div>
+
+					<!-- Narrative Copy explaining system architecture -->
+					<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80">
+						<div class="space-y-2">
+							<h4 class="font-mono text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> EDGE RUNTIME (Astro + Cloudflare)
+							</h4>
+							<p class="text-zinc-400 text-sm font-light">
+								Astro builds optimized static HTML files containing zero client-side JavaScript. Deployed directly to Cloudflare Pages edge global network, the portfolio serves sub-second responses worldwide, ensuring a flawless 100/100 Core Web Vitals score while protecting server access logs.
+							</p>
+						</div>
+						<div class="space-y-2">
+							<h4 class="font-mono text-xs font-bold text-indigo-400 flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span> EVENT-DRIVEN n8n PIPELINES
+							</h4>
+							<p class="text-zinc-400 text-sm font-light">
+								Self-hosted on a private Oracle Cloud Ampere instance, our orchestrator captures ingestion webhooks from content, analytical, and payment sources. This architecture avoids monolithic bloat, distributing task executions into specialized worker modules.
+							</p>
+						</div>
+						<div class="space-y-2">
+							<h4 class="font-mono text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+								<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> THE RELATIONAL DATA FABRIC
+							</h4>
+							<p class="text-zinc-400 text-sm font-light">
+								Every automation action triggers state updates in Supabase or payment gateways. This provides seamless synchronization between background automation events, content rendering, customer transaction databases, and analytics tables.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- n8n Workflow Breakdown Section with stunning mockup/screenshots placeholders -->
+			<section id="workflow" class="space-y-16">
+				<div class="space-y-4">
+					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400">
+						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">CORE ENGINE</span>
+						<span>CASE STUDY</span>
+					</div>
+					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+						Multi-Item Orchestration & Data Loops
+					</h2>
+					<p class="text-zinc-400 font-light max-w-3xl text-base sm:text-lg">
+						Standard single-batch workflows often break when handling high-volume webhooks. Our solution executes complex loops using native <strong class="text-white font-semibold">item-level iteration (`.item`)</strong> in JavaScript blocks. This ensures that every individual record maps cleanly to its corresponding Supabase database, Stripe, and analytics nodes.
+					</p>
+				</div>
+
+				<!-- Screenshot 1: General Canvas -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+					<div class="lg:col-span-5 space-y-4">
+						<div class="font-mono text-xs text-zinc-500">01 / ORCHESTRATION LAYER</div>
+						<h3 class="text-2xl font-bold text-white">The Central n8n Canvas</h3>
+						<p class="text-zinc-400 text-sm font-light leading-relaxed">
+							The entire ingest ecosystem is governed by an event-driven master blueprint. When a webhook hits the self-hosted n8n endpoint, it parses incoming payload schema variables, executes sanitization checks, and maps execution variables to sub-loops.
+						</p>
+						<ul class="space-y-2 font-mono text-xs text-zinc-400">
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Webhook ingestion endpoint: <code class="text-zinc-300">/api/v1/inbound</code>
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Self-hosted Oracle Cloud Ampere VM (Secure VPS)
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Zero single-point-of-failure runtime isolation
+							</li>
+						</ul>
+					</div>
+
+					<div class="lg:col-span-7">
+						<!-- Elegant Screenshot Mockup container with Image inside -->
+						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+								<div class="flex items-center gap-1.5">
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+								</div>
+								<span class="text-xs font-mono text-zinc-500">n8n-workflow-main.png</span>
+							</div>
+
+							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+								<!-- The actual optimized Astro Image element -->
+								<Image
+									src={n8nWorkflowMain}
+									alt="n8n Main Workflow Canvas"
+									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+								/>
+
+								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
+								<div class="z-10 p-6 text-center space-y-4 max-w-md">
+									<div class="inline-flex p-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+									</div>
+									<div class="space-y-1">
+										<h4 class="font-bold text-white text-sm">Visual Workflow Canvas Placeholder</h4>
+										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
+											Replace with your n8n main screenshot in <code class="text-zinc-400">src/assets/images/n8n-workflow-main.png</code>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+								<span>Fig 1. High-level n8n pipeline orchestrating content ingestion workflows.</span>
+								<span class="text-emerald-400">Ready</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Screenshot 2: Webhook Router Node -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+					<!-- Screenshot Left on LG -->
+					<div class="lg:col-span-7 order-last lg:order-first">
+						<!-- Elegant Screenshot Mockup container with Image inside -->
+						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+								<div class="flex items-center gap-1.5">
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+								</div>
+								<span class="text-xs font-mono text-zinc-500">n8n-webhook-router.png</span>
+							</div>
+
+							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+								<!-- The actual optimized Astro Image element -->
+								<Image
+									src={n8nWebhookRouter}
+									alt="n8n Webhook Router node"
+									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+								/>
+
+								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
+								<div class="z-10 p-6 text-center space-y-4 max-w-md">
+									<div class="inline-flex p-3 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+									</div>
+									<div class="space-y-1">
+										<h4 class="font-bold text-white text-sm">Custom Webhook Node Config Placeholder</h4>
+										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
+											Replace with your webhook screenshot in <code class="text-zinc-400">src/assets/images/n8n-webhook-router.png</code>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+								<span>Fig 2. Configuration showing custom router mapping JSON webhook payloads.</span>
+								<span class="text-emerald-400">Ready</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="lg:col-span-5 space-y-4">
+						<div class="font-mono text-xs text-zinc-500">02 / ENDPOINT MANAGEMENT</div>
+						<h3 class="text-2xl font-bold text-white">Custom Webhook Router Configuration</h3>
+						<p class="text-zinc-400 text-sm font-light leading-relaxed">
+							We maintain clean security separation inside our webhook node paths. Endpoint routing is completely dynamic, keeping credentials masked behind environmental variables on the Oracle VPS instance while exposing lightweight payloads to mutation nodes.
+						</p>
+						<ul class="space-y-2 font-mono text-xs text-zinc-400">
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Webhook paths dynamically routed based on custom headers
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Masked API keys utilizing secure local node credential management
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Automated response payloads sent back instantly for low latencies
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Screenshot 3: Item-level Iteration Detail -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+					<div class="lg:col-span-5 space-y-4">
+						<div class="font-mono text-xs text-zinc-500">03 / ROBUST LOOPING DATA LOGIC</div>
+						<h3 class="text-2xl font-bold text-white">Item-Level Iteration Logic</h3>
+						<p class="text-zinc-400 text-sm font-light leading-relaxed">
+							Standard workflow integrations often default to batch execution using <code class="text-zinc-300 bg-zinc-900 px-1 py-0.5 rounded text-xs font-mono">.first()</code>. In this production-ready setup, we configure all JavaScript nodes and databases to map each object using explicit <code class="text-emerald-400 bg-zinc-900 px-1 py-0.5 rounded text-xs font-mono">.item</code> syntax. This ensures loops process every row sequentially, completely eliminating payload loss during concurrent webhook bursts.
+						</p>
+						<ul class="space-y-2 font-mono text-xs text-zinc-400">
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Prevents webhook loss by processing arrays row-by-row
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Explicit `.item` reference loops inside DB mutation nodes
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">✔</span> Robust, reliable, error-tolerant sync pipeline logic
+							</li>
+						</ul>
+					</div>
+
+					<div class="lg:col-span-7">
+						<!-- Elegant Screenshot Mockup container with Image inside -->
+						<div class="relative rounded-xl border border-zinc-800 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+								<div class="flex items-center gap-1.5">
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+									<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+								</div>
+								<span class="text-xs font-mono text-zinc-500">n8n-item-iteration.png</span>
+							</div>
+
+							<div class="relative bg-zinc-900/60 aspect-[16/10] flex flex-col items-center justify-center overflow-hidden">
+								<!-- The actual optimized Astro Image element -->
+								<Image
+									src={n8nItemIteration}
+									alt="n8n Item Iteration Detail"
+									class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition duration-300"
+								/>
+
+								<!-- Styled overlay representing the visual screenshot blueprint until replaced -->
+								<div class="z-10 p-6 text-center space-y-4 max-w-md">
+									<div class="inline-flex p-3 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+										<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"></path></svg>
+									</div>
+									<div class="space-y-1">
+										<h4 class="font-bold text-white text-sm">Item-Level Iteration Logic Placeholder</h4>
+										<p class="text-xs text-zinc-500 leading-relaxed font-mono">
+											Replace with your mutation loop screenshot in <code class="text-zinc-400">src/assets/images/n8n-item-iteration.png</code>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+								<span>Fig 3. custom loop executing strict item-level mutation mapping.</span>
+								<span class="text-emerald-400">Ready</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Experience / Retainers Timeline Section -->
+			<section id="experience" class="space-y-16">
+				<div class="space-y-4">
+					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400">
+						<span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">PROVEN WORK</span>
+						<span>CONTRACTS & RETAINERS</span>
+					</div>
+					<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+						Strategic Web & Systems Engineering Experience
+					</h2>
+					<p class="text-zinc-400 font-light max-w-3xl text-base sm:text-lg">
+						I lead systems architecture retainers for companies that demand bulletproof technical SEO, zero-downtime automation, and modern, lightning-fast web infrastructure.
+					</p>
+				</div>
+
+				<!-- Timeline Component -->
+				<div class="relative pl-6 md:pl-8 border-l border-zinc-800 space-y-12">
+
+					<!-- Experience 1: Fannit -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-emerald-400 font-mono text-sm font-semibold">Dec 2021 — Present</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Lead Systems Retainer</h4>
+							</div>
+							<div class="md:col-span-9 space-y-3">
+								<h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
+									Fannit <span class="text-zinc-500 font-light text-base">| Systems & Technical SEO</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Orchestrated complete migration from legacy WordPress structures to fast, content-driven head setups. Implemented scalable back-end scraping pipelines and Google Search Console monitoring webhooks to automate schema indexing and target search analytics triggers.
+								</p>
+								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Dynamic XML Sitemaps</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Content API Sync</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Puppeteer Scraper Nodes</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Experience 2: Greening the Islands -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-indigo-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-indigo-400 font-mono text-sm font-semibold">Jul 2022 — Dec 2024</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Lead Architect</h4>
+							</div>
+							<div class="md:col-span-9 space-y-3">
+								<h3 class="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors duration-200">
+									Greening the Islands <span class="text-zinc-500 font-light text-base">| Global Carbon Data Hub</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Architected an automated multi-member database syncing system. Configured high-volume webhooks connecting member portals, Stripe webhooks, and n8n pipelines to generate dynamic vector-based carbon output charts, rendering perfectly on modern edge clients with zero server bloat.
+								</p>
+								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Stripe Webhooks</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SVG Data Visualization</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Multi-Channel Sync</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Experience 3: Premium Sign Solutions -->
+					<div class="relative group">
+						<!-- Timeline node -->
+						<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform duration-200"></div>
+
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+							<div class="md:col-span-3">
+								<span class="text-emerald-400 font-mono text-sm font-semibold">Jan 2020 — Oct 2021</span>
+								<h4 class="text-zinc-500 text-xs font-mono mt-1">Automation Engineer</h4>
+							</div>
+							<div class="md:col-span-9 space-y-3">
+								<h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
+									Premium Sign Solutions <span class="text-zinc-500 font-light text-base">| Lead Gen Infrastructure</span>
+								</h3>
+								<p class="text-zinc-400 text-sm leading-relaxed font-light">
+									Built dynamic SEO lead generation landing pages running on Astro SSG, resulting in a dramatic reduction in page weights and a sub-300ms Time To Interactive (TTI). Linked inbound quote request payloads to automation webhook routers, reducing lead response times to under 30 seconds.
+								</p>
+								<div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px] text-zinc-500">
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Astro SSG Migrations</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Form Hook Ingestion</span>
+									<span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Automated CRM Routing</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Call To Action & Footer Section -->
+			<section id="contact" class="pt-12 border-t border-zinc-900">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+					<div class="lg:col-span-6 space-y-4">
+						<h2 class="text-3xl font-extrabold text-white">Let's Orchestrate Something Epic</h2>
+						<p class="text-zinc-400 font-light leading-relaxed">
+							Whether you need a full systems overhaul, high-performance Astro migrations, self-hosted n8n setups, or absolute 100/100 Core Web Vitals optimization, let's connect. I work on focused, high-impact contract retainers.
+						</p>
+						<div class="space-y-2 pt-2 font-mono text-xs text-zinc-400">
+							<div class="flex items-center gap-2">
+								<span class="text-emerald-400">EMAIL:</span>
+								<a href="mailto:operator@example.com" class="hover:text-white hover:underline">operator@example.com</a>
+							</div>
+							<div class="flex items-center gap-2">
+								<span class="text-indigo-400">GITHUB:</span>
+								<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline">github.com/operator-portfolio</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Simple Minimal Form / Contact Visual -->
+					<div class="lg:col-span-6">
+						<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-4">
+							<div class="flex items-center gap-2 border-b border-zinc-800 pb-3">
+								<span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+								<span class="text-xs font-mono text-zinc-500">secure_inbound_terminal.sh</span>
+							</div>
+							<div class="space-y-3 text-sm">
+								<div>
+									<label class="block font-mono text-xs text-zinc-500 mb-1">sender_identity</label>
+									<input type="text" placeholder="John Doe" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
+								</div>
+								<div>
+									<label class="block font-mono text-xs text-zinc-500 mb-1">callback_channel (email)</label>
+									<input type="email" placeholder="john@example.com" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
+								</div>
+								<div>
+									<label class="block font-mono text-xs text-zinc-500 mb-1">project_parameters (message)</label>
+									<textarea rows="3" placeholder="Describe the automation or web pipeline requirement..." class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all"></textarea>
+								</div>
+								<button class="w-full py-2.5 rounded bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold transition-colors font-mono text-xs tracking-wider">
+									EXECUTE_CONNECTION_REQUEST
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Copyright -->
+				<div class="mt-16 pt-8 border-t border-zinc-900/60 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 font-mono gap-4">
+					<div>
+						© {new Date().getFullYear()} operator@portfolio. Built with Astro, Tailwind & ❤️.
+					</div>
+					<div class="flex items-center gap-4">
+						<a href="#hero" class="hover:text-zinc-300">SYSTEM_UP</a>
+						<span>|</span>
+						<a href="#blueprint" class="hover:text-zinc-300">ROUTER_SECURE</a>
+						<span>|</span>
+						<span class="text-emerald-400">CF_EDGE_OK</span>
+					</div>
+				</div>
+			</section>
+
+		</main>
+
+		<!-- Script for mobile menu interactive toggle -->
+		<script>
+			const menuBtn = document.getElementById('mobile-menu-btn');
+			const mobileMenu = document.getElementById('mobile-menu');
+
+			menuBtn?.addEventListener('click', () => {
+				mobileMenu?.classList.toggle('hidden');
+			});
+
+			// Hide mobile menu on clicking any link
+			const mobileLinks = mobileMenu?.querySelectorAll('a');
+			mobileLinks?.forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenu?.classList.add('hidden');
+				});
+			});
+		</script>
+	</body>
+</html>
