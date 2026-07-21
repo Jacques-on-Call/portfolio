@@ -185,44 +185,45 @@ import '../styles/global.css';
 					</div>
 				</div>
 
-				<!-- Real-world SEO tech solving section -->
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
-					<div class="lg:col-span-5 space-y-4">
-						<div class="inline-flex items-center gap-1.5 font-mono text-xs text-indigo-400">
-							<span class="px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">PRODUCTION SYSTEMS</span>
-							<span>SOLVING SEO AT SCALE</span>
-						</div>
-						<h3 class="text-2xl font-bold text-white">How I Solved a Massive SEO Tech & Integration Challenge</h3>
-						<p class="text-zinc-400 text-sm font-light leading-relaxed">
-							When handling bulk SEO optimization or multi-site data ingestion, standard off-the-shelf tools quickly fall flat. I design custom, production-grade automation architectures to handle the heavy lifting.
-						</p>
-						<p class="text-zinc-400 text-sm font-light leading-relaxed">
-							This n8n workflow operates as a high-capacity, multi-branched SEO operations engine. It automates keyword schema verification, processes content iterations sequentially, handles webhooks natively, routes data to headless content management platforms, and automatically flags internal linking opportunities.
-						</p>
-						<p class="text-zinc-300 text-sm font-light leading-relaxed italic">
-							"By automating the complex data-routing, content audits, and synchronization steps, we save hundreds of hours of manual labor while maintaining absolute technical precision across thousands of pages."
-						</p>
+			</section>
+
+			<!-- Real-world SEO tech solving section -->
+			<section id="seo-tech" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+				<div class="lg:col-span-7 space-y-4">
+					<div class="inline-flex items-center gap-1.5 font-mono text-xs text-indigo-400">
+						<span class="px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">PRODUCTION SYSTEMS</span>
+						<span>SOLVING SEO AT SCALE</span>
 					</div>
-					<div class="lg:col-span-7">
-						<div class="relative rounded-xl border border-zinc-850 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
-							<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
-								<div class="flex items-center gap-1.5">
-									<span class="w-2.5 h-2.5 rounded-full bg-indigo-500/40"></span>
-									<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/40"></span>
-								</div>
-								<span class="text-xs font-mono text-zinc-500">n8n-seo-operations-engine.png</span>
+					<h3 class="text-3xl font-extrabold text-white">How I Solved a Massive SEO Tech & Integration Challenge</h3>
+					<p class="text-zinc-400 text-base font-light leading-relaxed">
+						When handling bulk SEO optimization or multi-site data ingestion, standard off-the-shelf tools quickly fall flat. I design custom, production-grade automation architectures to handle the heavy lifting.
+					</p>
+					<p class="text-zinc-400 text-base font-light leading-relaxed">
+						This n8n workflow operates as a high-capacity, multi-branched SEO operations engine. It automates keyword schema verification, processes content iterations sequentially, handles webhooks natively, routes data to headless content management platforms, and automatically flags internal linking opportunities.
+					</p>
+					<p class="text-zinc-300 text-base font-light leading-relaxed italic border-l-2 border-indigo-500 pl-4 py-1">
+						"By automating the complex data-routing, content audits, and synchronization steps, we save hundreds of hours of manual labor while maintaining absolute technical precision across thousands of pages."
+					</p>
+				</div>
+				<div class="lg:col-span-5">
+					<div class="relative rounded-xl border border-zinc-850 bg-zinc-950 p-2 shadow-2xl group overflow-hidden">
+						<div class="flex items-center justify-between px-3 py-2 border-b border-zinc-900 bg-zinc-900/40 rounded-t-lg">
+							<div class="flex items-center gap-1.5">
+								<span class="w-2.5 h-2.5 rounded-full bg-indigo-500/40"></span>
+								<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/40"></span>
 							</div>
-							<div class="relative bg-zinc-900/60 aspect-[16/11] flex flex-col items-center justify-center overflow-hidden">
-								<Image
-									src={n8nSeoTechWorkflow}
-									alt="Jacques' Complex n8n SEO Tech Workflow Engine"
-									class="w-full h-full object-cover transition duration-500 hover:scale-[1.01]"
-								/>
-							</div>
-							<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
-								<span>Complete multi-branched automation pipeline for bulk SEO and data mapping.</span>
-								<span class="text-indigo-400">Production Live</span>
-							</div>
+							<span class="text-xs font-mono text-zinc-500">n8n-seo-operations-engine.png</span>
+						</div>
+						<div class="relative bg-zinc-900/60 aspect-[16/11] flex flex-col items-center justify-center overflow-hidden">
+							<Image
+								src={n8nSeoTechWorkflow}
+								alt="Jacques' Complex n8n SEO Tech Workflow Engine"
+								class="w-full h-full object-cover transition duration-500 hover:scale-[1.01]"
+							/>
+						</div>
+						<div class="p-3 bg-zinc-950 border-t border-zinc-900 text-xs text-zinc-500 font-mono flex justify-between items-center">
+							<span>Complete multi-branched automation pipeline for bulk SEO and data mapping.</span>
+							<span class="text-indigo-400">Production Live</span>
 						</div>
 					</div>
 				</div>
@@ -805,27 +806,48 @@ import '../styles/global.css';
 
 					<!-- Simple Minimal Form / Contact Visual -->
 					<div class="lg:col-span-6">
-						<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-4">
+						<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-4 relative overflow-hidden">
 							<div class="flex items-center gap-2 border-b border-zinc-800 pb-3">
 								<span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 animate-pulse"></span>
 								<span class="text-xs font-mono text-zinc-400">Get in Touch</span>
 							</div>
-							<div class="space-y-3 text-sm">
+
+							<form id="contact-form" class="space-y-3 text-sm">
 								<div>
-									<label class="block font-mono text-xs text-zinc-400 mb-1">Your Name</label>
-									<input type="text" placeholder="John Doe" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
+									<label for="form-name" class="block font-mono text-xs text-zinc-400 mb-1">Your Name *</label>
+									<input type="text" id="form-name" name="name" required placeholder="John Doe" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
 								</div>
 								<div>
-									<label class="block font-mono text-xs text-zinc-400 mb-1">Your Email Address</label>
-									<input type="email" placeholder="john@example.com" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
+									<label for="form-email" class="block font-mono text-xs text-zinc-400 mb-1">Your Email Address *</label>
+									<input type="email" id="form-email" name="email" required placeholder="john@example.com" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
 								</div>
 								<div>
-									<label class="block font-mono text-xs text-zinc-400 mb-1">How can I help you?</label>
-									<textarea rows="3" placeholder="Describe your content writing or workflow automation goals..." class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all"></textarea>
+									<label for="form-company" class="block font-mono text-xs text-zinc-400 mb-1">Company / Organization <span class="text-zinc-600">(Optional)</span></label>
+									<input type="text" id="form-company" name="company" placeholder="Acme Corp" class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all" />
 								</div>
-								<button class="w-full py-2.5 rounded bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold transition-colors font-mono text-xs tracking-wider">
-									SEND MESSAGE
+								<div>
+									<label for="form-message" class="block font-mono text-xs text-zinc-400 mb-1">How can I help you? *</label>
+									<textarea id="form-message" name="message" required rows="3" placeholder="Describe your content writing or workflow automation goals..." class="w-full bg-zinc-950 border border-zinc-800 focus:border-indigo-500 rounded px-3 py-2 text-zinc-200 placeholder-zinc-700 outline-none transition-all"></textarea>
+								</div>
+
+								<button type="submit" id="submit-btn" class="w-full py-2.5 rounded bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold transition-all duration-200 font-mono text-xs tracking-wider flex items-center justify-center gap-2">
+									<span>SEND MESSAGE</span>
 								</button>
+							</form>
+
+							<!-- Form Status Overlay Messages -->
+							<div id="form-status-success" class="hidden absolute inset-0 bg-zinc-900/95 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
+								<div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-3">✓</div>
+								<h3 class="text-white font-bold text-lg mb-1">Message Sent!</h3>
+								<p class="text-zinc-400 text-xs max-w-xs mb-4">Your message has been processed. The custom n8n automation has triggered and Jacques will get back to you shortly.</p>
+								<button id="reset-form-btn" class="px-4 py-1.5 rounded bg-zinc-850 hover:bg-zinc-800 text-zinc-300 font-mono text-xxs border border-zinc-800 transition-all">Send Another Message</button>
+							</div>
+
+							<div id="form-status-error" class="hidden absolute inset-0 bg-zinc-900/95 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
+								<div class="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 text-xl mb-3">✕</div>
+								<h3 class="text-white font-bold text-lg mb-1">Submission Failed</h3>
+								<p class="text-zinc-400 text-xs max-w-xs mb-4">We couldn't connect to the n8n webhook right now. Please try again or email directly to <a href="mailto:Jacquesoncall@gmail.com" class="text-emerald-400 underline">Jacquesoncall@gmail.com</a>.</p>
+								<button id="error-reset-btn" class="px-4 py-1.5 rounded bg-zinc-850 hover:bg-zinc-800 text-zinc-300 font-mono text-xxs border border-zinc-800 transition-all">Try Again</button>
 							</div>
 						</div>
 					</div>
@@ -848,8 +870,9 @@ import '../styles/global.css';
 
 		</main>
 
-		<!-- Script for mobile menu interactive toggle -->
+		<!-- Scripts for interactive components -->
 		<script>
+			// Mobile Menu Toggle
 			const menuBtn = document.getElementById('mobile-menu-btn');
 			const mobileMenu = document.getElementById('mobile-menu');
 
@@ -863,6 +886,72 @@ import '../styles/global.css';
 				link.addEventListener('click', () => {
 					mobileMenu?.classList.add('hidden');
 				});
+			});
+
+			// Contact Form n8n Webhook submission
+			const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+			const submitBtn = document.getElementById('submit-btn');
+			const successOverlay = document.getElementById('form-status-success');
+			const errorOverlay = document.getElementById('form-status-error');
+			const resetBtn = document.getElementById('reset-form-btn');
+			const errorResetBtn = document.getElementById('error-reset-btn');
+
+			if (contactForm && submitBtn) {
+				contactForm.addEventListener('submit', async (e) => {
+					e.preventDefault();
+
+					// Visual state: sending
+					const originalBtnContent = submitBtn.innerHTML;
+					submitBtn.setAttribute('disabled', 'true');
+					submitBtn.innerHTML = `
+						<svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-zinc-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+							<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+							<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+						</svg>
+						<span>SENDING...</span>
+					`;
+
+					const formData = new FormData(contactForm);
+					const payload = {
+						name: formData.get('name'),
+						email: formData.get('email'),
+						company: formData.get('company') || 'None',
+						message: formData.get('message')
+					};
+
+					try {
+						const response = await fetch('https://n8n.stratgycontent.agency/webhook/contact-jacques-form', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							body: JSON.stringify(payload)
+						});
+
+						if (response.ok) {
+							successOverlay?.classList.remove('hidden');
+							contactForm.reset();
+						} else {
+							throw new Error('Server returned error response');
+						}
+					} catch (error) {
+						console.error('Submission error:', error);
+						errorOverlay?.classList.remove('hidden');
+					} finally {
+						// Restore button state
+						submitBtn.removeAttribute('disabled');
+						submitBtn.innerHTML = originalBtnContent;
+					}
+				});
+			}
+
+			// Reset buttons to return to normal form state
+			resetBtn?.addEventListener('click', () => {
+				successOverlay?.classList.add('hidden');
+			});
+
+			errorResetBtn?.addEventListener('click', () => {
+				errorOverlay?.classList.add('hidden');
 			});
 		</script>
 	</body>

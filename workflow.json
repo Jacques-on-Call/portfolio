@@ -1,0 +1,126 @@
+{
+  "name": "Contact me",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "contact-jacques-form",
+        "options": {}
+      },
+      "id": "38ed51f2-674b-4f2e-b728-45f1ffd9fa6e",
+      "name": "Webhook",
+      "position": [
+        -608,
+        -1024
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "webhookId": "contact-jacques-form"
+    },
+    {
+      "parameters": {
+        "useCustomSchema": true,
+        "operation": "getAll",
+        "tableId": "agency_config"
+      },
+      "id": "64f56e90-4769-44fa-8577-ca298276fde5",
+      "name": "Get Global Config",
+      "position": [
+        -384,
+        -1024
+      ],
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "credentials": {
+        "supabaseApi": {
+          "id": "sU4Jdigi3ql7DwQV",
+          "name": "Supabase Service Role Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================\n// DYNAMIC CONFIG TRANSLATOR (Protocol v5)\n// ============================================================\n\nconst items = $input.all();\nconst config = {};\n\nitems.forEach(item => {\n  if (item.json.key && item.json.value) {\n    config[item.json.key] = item.json.value;\n  }\n});\n\nreturn {\n  SUPABASE_URL: config.SUPABASE_URL,\n  SUPABASE_KEY: config.SUPABASE_KEY,\n  DASHBOARD_ACCESS_KEY: config.DASHBOARD_ACCESS_KEY,\n  SLACK_WEBHOOK_URL: config.SLACK_WEBHOOK_URL,\n  PDL_API_KEY: config.PDL_API_KEY,\n  RESEND_API_KEY: config.RESEND_API_KEY,\n  OPENAI_API_KEY: config.OPENAI_API_KEY\n};"
+      },
+      "id": "fa3c7b0c-065a-4462-b584-683424621e26",
+      "name": "Global Config",
+      "position": [
+        -160,
+        -1024
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Global Config').item.json.SLACK_WEBHOOK_URL }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"🚨 *High Value Lead Detected!*\\n*Name:* {{ $node['Webhook'].json.body.name }}\\n*Company:* {{ $node['Lead Enrichment'].json.company?.name || 'Unknown' }}\\n*Priority Score:* {{ $json.priority_score }}/100\\n*AI Assessment:* {{ $json.archetype }}\\n*Draft ready for review in your Queue.*\"\n}",
+        "options": {}
+      },
+      "id": "0fe93bf5-6a07-47f5-9b7d-c6be9f679082",
+      "name": "Urgency Notification",
+      "position": [
+        64,
+        -1024
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get Global Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Global Config": {
+      "main": [
+        [
+          {
+            "node": "Global Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Global Config": {
+      "main": [
+        [
+          {
+            "node": "Urgency Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "kWcURyFdlbXQP8Db"
+  },
+  "versionId": "582213d0-d499-43ea-9adb-9aadb076de22",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "6bfdbed86bd9560a677a2384b7477a2d5e1c2d53ffbfee33f1f885d0e3e4710d"
+  },
+  "nodeGroups": [],
+  "id": "5psXE8vy63fxu9B2",
+  "tags": []
+}
