@@ -4,18 +4,18 @@
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "contact-jacques-form",
+        "path": "portfolio-contact-me-form",
         "options": {}
       },
-      "id": "38ed51f2-674b-4f2e-b728-45f1ffd9fa6e",
+      "id": "f6ac11b2-7527-433c-9916-6d563cf93ed2",
       "name": "Webhook",
-      "position": [
-        -608,
-        -1024
-      ],
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
-      "webhookId": "contact-jacques-form"
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "6e768d6c-4d2e-417f-8363-4cef49fccf5d"
     },
     {
       "parameters": {
@@ -23,14 +23,14 @@
         "operation": "getAll",
         "tableId": "agency_config"
       },
-      "id": "64f56e90-4769-44fa-8577-ca298276fde5",
+      "id": "aa9f67d0-1aff-44c9-b227-a1e6c5edc810",
       "name": "Get Global Config",
-      "position": [
-        -384,
-        -1024
-      ],
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
       "credentials": {
         "supabaseApi": {
           "id": "sU4Jdigi3ql7DwQV",
@@ -42,32 +42,62 @@
       "parameters": {
         "jsCode": "// ============================================================\n// DYNAMIC CONFIG TRANSLATOR (Protocol v5)\n// ============================================================\n\nconst items = $input.all();\nconst config = {};\n\nitems.forEach(item => {\n  if (item.json.key && item.json.value) {\n    config[item.json.key] = item.json.value;\n  }\n});\n\nreturn {\n  SUPABASE_URL: config.SUPABASE_URL,\n  SUPABASE_KEY: config.SUPABASE_KEY,\n  DASHBOARD_ACCESS_KEY: config.DASHBOARD_ACCESS_KEY,\n  SLACK_WEBHOOK_URL: config.SLACK_WEBHOOK_URL,\n  PDL_API_KEY: config.PDL_API_KEY,\n  RESEND_API_KEY: config.RESEND_API_KEY,\n  OPENAI_API_KEY: config.OPENAI_API_KEY\n};"
       },
-      "id": "fa3c7b0c-065a-4462-b584-683424621e26",
+      "id": "809137ee-15fe-4f5b-8516-17aa76db145b",
       "name": "Global Config",
-      "position": [
-        -160,
-        -1024
-      ],
       "type": "n8n-nodes-base.code",
-      "typeVersion": 2
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "={{ $('Global Config').item.json.SLACK_WEBHOOK_URL }}",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"text\": \"🚨 *High Value Lead Detected!*\\n*Name:* {{ $node['Webhook'].json.body.name }}\\n*Company:* {{ $node['Lead Enrichment'].json.company?.name || 'Unknown' }}\\n*Priority Score:* {{ $json.priority_score }}/100\\n*AI Assessment:* {{ $json.archetype }}\\n*Draft ready for review in your Queue.*\"\n}",
-        "options": {}
+        "from": "Jacques <jacques@strategycontent.agency>",
+        "to": "={{ $(\"Webhook\").item.json.body.email }}",
+        "subject": "Thanks for reaching out — I'll be in touch soon!",
+        "html": "=<!DOCTYPE html>\n<html>\n<body style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;\">\n\n  <p>Hi <strong>{{ $(\"Webhook\").item.json.body.name }}</strong>,</p>\n\n  <p>Thanks for getting in touch through my portfolio! Your message has been received and is already being processed by our autonomous workflow system — powered by <strong>n8n</strong> and AI agents.</p>\n\n  <p>Here's what's happening behind the scenes:</p>\n  <ul>\n    <li>Your inquiry is being enriched and analysed in real time</li>\n    <li>Information is being routed to the right team members</li>\n    <li>Our autonomous systems prioritise responses to get you the fastest turnaround possible</li>\n  </ul>\n\n  <p>You'll receive a personalised follow-up from a human shortly. In the meantime, feel free to browse more of my work at <a href=\"https://strategycontent.agency\" style=\"color: #0066cc;\">strategycontent.agency</a>.</p>\n\n  <p>Talk soon,</p>\n  <p><strong>Jacques</strong></p>\n\n  <hr style=\"border: none; border-top: 1px solid #eee; margin: 20px 0;\">\n  <p style=\"font-size: 12px; color: #888;\">This response was generated and sent by an autonomous n8n workflow to speed up our communication.</p>\n\n</body>\n</html>",
+        "additionalOptions": {}
       },
-      "id": "0fe93bf5-6a07-47f5-9b7d-c6be9f679082",
-      "name": "Urgency Notification",
+      "id": "9f594396-b921-46b0-bb0f-58bb78585f6e",
+      "name": "Auto-Response",
+      "type": "n8n-nodes-resend.resend",
+      "typeVersion": 1,
       "position": [
-        64,
-        -1024
+        672,
+        0
       ],
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1
+      "webhookId": "c3e51b28-131d-448d-aa01-f48311d3f6d7",
+      "credentials": {
+        "resendApi": {
+          "id": "aLKrPOHHoVNe5eCq",
+          "name": "Resend account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "from": "Jacques <jacques@strategycontent.agency>",
+        "to": "jacques@strategycontent.agency",
+        "subject": "=New contact form submission from {{ $(\"Webhook\").item.json.body.name }}",
+        "html": "=<!DOCTYPE html>\n<html>\n<body style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;\">\n\n  <h2>New Contact Form Submission</h2>\n\n  <table style=\"width: 100%; border-collapse: collapse;\">\n    <tr>\n      <td style=\"padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;\">Name</td>\n      <td style=\"padding: 8px; border-bottom: 1px solid #eee;\">{{ $(\"Webhook\").item.json.body.name }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;\">Email</td>\n      <td style=\"padding: 8px; border-bottom: 1px solid #eee;\">{{ $(\"Webhook\").item.json.body.email }}</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;\">Message</td>\n      <td style=\"padding: 8px; border-bottom: 1px solid #eee;\">{{ $(\"Webhook\").item.json.body.message }}</td>\n    </tr>\n  </table>\n\n  <p style=\"margin-top: 20px; font-size: 12px; color: #888;\">Sent from your portfolio contact form via n8n.</p>\n\n</body>\n</html>",
+        "additionalOptions": {}
+      },
+      "id": "7226c98e-9843-4aa0-9c90-c9ded94dc681",
+      "name": "Notify Me",
+      "type": "n8n-nodes-resend.resend",
+      "typeVersion": 1,
+      "position": [
+        896,
+        0
+      ],
+      "webhookId": "cf134486-178b-403e-b4ba-c0b3b86945b2",
+      "credentials": {
+        "resendApi": {
+          "id": "aLKrPOHHoVNe5eCq",
+          "name": "Resend account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -98,7 +128,18 @@
       "main": [
         [
           {
-            "node": "Urgency Notification",
+            "node": "Auto-Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-Response": {
+      "main": [
+        [
+          {
+            "node": "Notify Me",
             "type": "main",
             "index": 0
           }
@@ -106,7 +147,7 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate",
@@ -115,7 +156,7 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "kWcURyFdlbXQP8Db"
   },
-  "versionId": "582213d0-d499-43ea-9adb-9aadb076de22",
+  "versionId": "c2a8e8e6-d68a-431c-ac26-0dd9b391f579",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "6bfdbed86bd9560a677a2384b7477a2d5e1c2d53ffbfee33f1f885d0e3e4710d"
